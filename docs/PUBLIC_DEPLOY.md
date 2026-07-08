@@ -18,6 +18,16 @@ Netlify管理画面:
 https://app.netlify.com/projects/osaka-rail-3d-orp3
 ```
 
+## GitHub公開リポジトリ
+
+2026-07-08時点で、GitHub公開リポジトリへpush済みです。
+
+```text
+https://github.com/m-nagasako/osaka-rail-3d-orp3
+```
+
+`main` ブランチにソース、生成済み公開データ、テスト、docsを含めています。`node_modules/`、`dist/`、`.netlify/`、zip成果物、環境変数、ログは公開対象から除外しています。
+
 ## 公開前の確認
 
 ```powershell
