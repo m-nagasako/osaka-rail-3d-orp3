@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Generated output
+dist/
+coverage/
+*.zip
+
+# Local deploy/auth state
+.netlify/
+.env
+.env.*
+
+# Logs and OS files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db

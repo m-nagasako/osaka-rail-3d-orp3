@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSAKA RAIL 3D</title>
+<style>
+  :root{--bg:#05070c;--panel:#0e131bcc;--line:#1e2836;--tx:#dfe6ee;--dim:#8ea0b5;--acc:#ffc857}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);
+    font-family:system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;overflow:hidden}
+  #app{position:fixed;inset:0}
+  button{font:inherit;color:var(--tx);background:#1a2230;border:1px solid var(--line);
+    border-radius:6px;padding:4px 10px;cursor:pointer}
+  button:hover{background:#232e40}
+  button.on{background:var(--acc);color:#12161d;border-color:var(--acc);font-weight:600}
+  .hud-title{position:fixed;left:14px;top:12px;pointer-events:none;text-shadow:0 1px 4px #000;
+    font-size:14px;letter-spacing:.25em;opacity:.92;font-weight:600}
+  /* レイヤパネル */
+  #layers{position:fixed;left:12px;top:44px;width:230px;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;padding:10px;backdrop-filter:blur(6px);
+    max-height:calc(100vh - 170px);overflow:auto}
+  #layers h2{font-size:12px;margin:0 0 8px;color:var(--dim);font-weight:600}
+  #layers .row{display:flex;align-items:center;gap:8px;padding:3px 2px;font-size:13px}
+  #layers .chip{width:14px;height:14px;border-radius:4px;flex:none}
+  #layers .nm{flex:1;cursor:pointer;user-select:none}
+  #layers .solo{font-size:11px;padding:1px 7px;opacity:.85}
+  #layers .tools{display:flex;gap:6px;margin:8px 0 2px}
+  #layers .tools button{font-size:11px;padding:3px 8px;flex:1}
+  #layers .sw{margin-top:10px;border-top:1px solid var(--line);padding-top:10px}
+  #toggle-layers{position:fixed;left:12px;top:44px;display:none;z-index:5}
+  /* 時刻バー */
+  #timebar{position:fixed;left:50%;transform:translateX(-50%);bottom:12px;display:flex;
+    align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:8px 14px;backdrop-filter:blur(6px);max-width:94vw}
+  #timebar input[type=range]{width:min(380px,42vw);accent-color:var(--acc)}
+  #timebar .clock{font-variant-numeric:tabular-nums;font-size:15px;font-weight:600;min-width:52px}
+  #timebar .trainstat{font-size:11px;color:var(--dim);white-space:nowrap;min-width:112px}
+  #timebar .spd{display:flex;gap:4px}
+  #timebar .spd button{font-size:11px;padding:3px 7px}
+  /* 駅情報パネル */
+  #station-panel{position:fixed;right:12px;top:44px;width:262px;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;padding:12px;backdrop-filter:blur(6px);
+    display:none;max-height:calc(100vh - 170px);overflow:auto}
+  #station-panel h2{margin:0 0 6px;font-size:17px}
+  #station-panel .close{position:absolute;right:8px;top:8px;padding:1px 8px}
+  #station-panel .lr{display:flex;align-items:center;gap:6px;font-size:12.5px;padding:2px 0}
+  #station-panel .num{font-size:20px;font-weight:700;color:var(--acc)}
+  #station-panel .src{font-size:11px;color:var(--dim);line-height:1.5}
+  #station-panel .sec{margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+  #station-panel .pinrow{display:flex;align-items:center;gap:6px;font-size:12px;padding:2px 0}
+  #station-panel .bar{height:8px;background:var(--acc);border-radius:3px;opacity:.9}
+  /* クレジット */
+  #credits{position:fixed;right:12px;bottom:12px;font-size:11px;color:var(--dim);max-width:340px}
+  #credits summary{cursor:pointer;opacity:.8}
+  #credits .box{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:8px 10px;margin-top:6px;line-height:1.6;max-height:40vh;overflow:auto}
+  #viewbtns{position:fixed;left:12px;bottom:12px;display:flex;gap:6px}
+  #viewbtns button{font-size:11px;padding:4px 10px}
+  .rankrow{display:flex;align-items:center;gap:6px;font-size:12px;padding:2px 2px;cursor:pointer;border-radius:4px}
+  .rankrow:hover{background:#1a2230}
+  .rk{width:15px;color:var(--dim);text-align:right;flex:none}
+  .rnm{width:82px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:none}
+  .rankrow .bar{height:7px;background:var(--acc);border-radius:3px;opacity:.9}
+  .rv{color:var(--dim);margin-left:auto;font-variant-numeric:tabular-nums}
+  #station-tooltip{position:fixed;display:none;z-index:9;pointer-events:none;background:#0e131be6;
+    border:1px solid var(--line);border-radius:8px;padding:8px 10px;box-shadow:0 10px 24px #0008;
+    font-size:12px;line-height:1.45;max-width:240px;backdrop-filter:blur(6px)}
+  #station-tooltip .tip-name{font-size:14px;font-weight:700;margin-bottom:3px;color:#fff}
+  #station-tooltip .tip-rider{color:var(--acc);font-variant-numeric:tabular-nums;margin-bottom:5px}
+  #station-tooltip .tip-line{display:flex;align-items:center;gap:6px;color:var(--dim);white-space:nowrap}
+  #station-tooltip .tip-chip{width:10px;height:10px;border-radius:3px;flex:none}
+  .error{padding:2rem;font-size:14px}
+  @media (max-width:760px){
+    #layers{display:none}
+    #layers.open{display:block;z-index:6}
+    #toggle-layers{display:block}
+    #timebar{bottom:8px;padding:6px 10px;gap:7px}
+    #station-panel{right:8px;left:8px;width:auto;top:auto;bottom:64px;max-height:46vh}
+    #credits{display:none}
+    #viewbtns{bottom:66px;left:8px}
+    #timebar{flex-wrap:wrap;justify-content:center}
+    #timebar .trainstat{display:block;flex-basis:100%;text-align:center;min-width:auto;order:-1}
+    #timebar input[type=range]{width:min(260px,44vw)}
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="hud-title">OSAKA RAIL 3D</div>
+<button id="toggle-layers">≡ 路線</button>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

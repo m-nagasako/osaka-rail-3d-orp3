@@ -1,0 +1,1554 @@
+[
+ {
+  "id": "s9961404",
+  "name": "江坂",
+  "lat": 34.758755,
+  "lng": 135.497106,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 88522,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961802",
+  "name": "東三国",
+  "lat": 34.741052,
+  "lng": 135.498496,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 37231,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1160213",
+  "name": "新大阪",
+  "lat": 34.732919,
+  "lng": 135.498558,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 163072,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3400324",
+  "name": "西中島南方",
+  "lat": 34.726584,
+  "lng": 135.498579,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 66431,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961805",
+  "name": "中津",
+  "lat": 34.711191,
+  "lng": 135.496938,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 42332,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1160214",
+  "name": "梅田",
+  "lat": 34.703765,
+  "lng": 135.497496,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 434981,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3300140",
+  "name": "淀屋橋",
+  "lat": 34.692289,
+  "lng": 135.500972,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 215475,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961808",
+  "name": "本町",
+  "lat": 34.681936,
+  "lng": 135.498982,
+  "lines": [
+   "midosuji",
+   "yotsubashi",
+   "chuo"
+  ],
+  "ridership": {
+   "value": 213894,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961809",
+  "name": "心斎橋",
+  "lat": 34.675012,
+  "lng": 135.50033,
+  "lines": [
+   "midosuji",
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 190018,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3100101",
+  "name": "なんば",
+  "lat": 34.666316,
+  "lng": 135.500277,
+  "lines": [
+   "midosuji",
+   "yotsubashi",
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 367846,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961811",
+  "name": "大国町",
+  "lat": 34.656075,
+  "lng": 135.4978,
+  "lines": [
+   "midosuji",
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 42636,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1160720",
+  "name": "動物園前",
+  "lat": 34.648815,
+  "lng": 135.504413,
+  "lines": [
+   "midosuji",
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 43342,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1160719",
+  "name": "天王寺",
+  "lat": 34.646554,
+  "lng": 135.51374,
+  "lines": [
+   "midosuji",
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 253102,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961814",
+  "name": "昭和町",
+  "lat": 34.633564,
+  "lng": 135.516954,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 27014,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961815",
+  "name": "西田辺",
+  "lat": 34.621627,
+  "lng": 135.515152,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 23919,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162605",
+  "name": "長居",
+  "lat": 34.609873,
+  "lng": 135.513761,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 35090,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961817",
+  "name": "あびこ",
+  "lat": 34.598821,
+  "lng": 135.512747,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 35632,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961818",
+  "name": "北花田",
+  "lat": 34.581873,
+  "lng": 135.516469,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 25092,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961819",
+  "name": "新金岡",
+  "lat": 34.567447,
+  "lng": 135.514864,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 20753,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3200715",
+  "name": "なかもず",
+  "lat": 34.55607,
+  "lng": 135.50579,
+  "lines": [
+   "midosuji"
+  ],
+  "ridership": {
+   "value": 65888,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961901",
+  "name": "大日",
+  "lat": 34.749476,
+  "lng": 135.578241,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 34022,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961902",
+  "name": "守口",
+  "lat": 34.737973,
+  "lng": 135.563851,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 17451,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961903",
+  "name": "太子橋今市",
+  "lat": 34.731376,
+  "lng": 135.55493,
+  "lines": [
+   "tanimachi",
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 13568,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961904",
+  "name": "千林大宮",
+  "lat": 34.723808,
+  "lng": 135.54913,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 15795,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961905",
+  "name": "関目高殿",
+  "lat": 34.715197,
+  "lng": 135.545797,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 15231,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961906",
+  "name": "野江内代",
+  "lat": 34.708951,
+  "lng": 135.538137,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 12436,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961907",
+  "name": "都島",
+  "lat": 34.709087,
+  "lng": 135.525799,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 33812,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3400811",
+  "name": "天神橋筋六丁目",
+  "lat": 34.710776,
+  "lng": 135.511283,
+  "lines": [
+   "tanimachi",
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 38626,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961909",
+  "name": "中崎町",
+  "lat": 34.706864,
+  "lng": 135.505245,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 16963,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1160214b",
+  "name": "東梅田",
+  "lat": 34.701031,
+  "lng": 135.49969,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 164709,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162503",
+  "name": "南森町",
+  "lat": 34.697699,
+  "lng": 135.511078,
+  "lines": [
+   "tanimachi",
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 84484,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3300138",
+  "name": "天満橋",
+  "lat": 34.689457,
+  "lng": 135.517371,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 86060,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961913",
+  "name": "谷町四丁目",
+  "lat": 34.681914,
+  "lng": 135.517253,
+  "lines": [
+   "tanimachi",
+   "chuo"
+  ],
+  "ridership": {
+   "value": 101330,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961914",
+  "name": "谷町六丁目",
+  "lat": 34.674923,
+  "lng": 135.516912,
+  "lines": [
+   "tanimachi",
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 32232,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961915",
+  "name": "谷町九丁目",
+  "lat": 34.667146,
+  "lng": 135.515801,
+  "lines": [
+   "tanimachi",
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 70947,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961916",
+  "name": "四天王寺前夕陽ヶ丘",
+  "lat": 34.658536,
+  "lng": 135.514134,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 24950,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961918",
+  "name": "阿倍野",
+  "lat": 34.642374,
+  "lng": 135.51198,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 19816,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961919",
+  "name": "文の里",
+  "lat": 34.636039,
+  "lng": 135.518024,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 12197,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961920",
+  "name": "田辺",
+  "lat": 34.628215,
+  "lng": 135.525515,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 10353,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961921",
+  "name": "駒川中野",
+  "lat": 34.621507,
+  "lng": 135.533036,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 18146,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961922",
+  "name": "平野",
+  "lat": 34.621078,
+  "lng": 135.548887,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 23497,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961923",
+  "name": "喜連瓜破",
+  "lat": 34.609376,
+  "lng": 135.551633,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 21726,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961924",
+  "name": "出戸",
+  "lat": 34.609012,
+  "lng": 135.565801,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 13368,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961925",
+  "name": "長原",
+  "lat": 34.602432,
+  "lng": 135.573853,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 11519,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961926",
+  "name": "八尾南",
+  "lat": 34.597433,
+  "lng": 135.582464,
+  "lines": [
+   "tanimachi"
+  ],
+  "ridership": {
+   "value": 10656,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1160214c",
+  "name": "西梅田",
+  "lat": 34.699642,
+  "lng": 135.495802,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 113613,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3300804",
+  "name": "肥後橋",
+  "lat": 34.691355,
+  "lng": 135.496388,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 67201,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962004",
+  "name": "四ツ橋",
+  "lat": 34.674112,
+  "lng": 135.496783,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員",
+   "note": "心斎橋駅で集計"
+  }
+ },
+ {
+  "id": "s9962007",
+  "name": "花園町",
+  "lat": 34.644371,
+  "lng": 135.496636,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 19470,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962008",
+  "name": "岸里",
+  "lat": 34.634372,
+  "lng": 135.493859,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 17237,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962009",
+  "name": "玉出",
+  "lat": 34.624096,
+  "lng": 135.490527,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 19450,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962010",
+  "name": "北加賀屋",
+  "lat": 34.621318,
+  "lng": 135.478861,
+  "lines": [
+   "yotsubashi"
+  ],
+  "ridership": {
+   "value": 23507,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962011",
+  "name": "住之江公園",
+  "lat": 34.609269,
+  "lng": 135.471879,
+  "lines": [
+   "yotsubashi",
+   "newtram"
+  ],
+  "ridership": {
+   "value": 29322,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962101",
+  "name": "コスモスクエア",
+  "lat": 34.642888,
+  "lng": 135.412472,
+  "lines": [
+   "chuo",
+   "newtram"
+  ],
+  "ridership": {
+   "value": 23712,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962102",
+  "name": "大阪港",
+  "lat": 34.65388,
+  "lng": 135.434336,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 24607,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962103",
+  "name": "朝潮橋",
+  "lat": 34.661035,
+  "lng": 135.448863,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 20772,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162306",
+  "name": "弁天町",
+  "lat": 34.668547,
+  "lng": 135.462381,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 42916,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3500208",
+  "name": "九条",
+  "lat": 34.675492,
+  "lng": 135.473749,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 28469,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962106",
+  "name": "阿波座",
+  "lat": 34.681483,
+  "lng": 135.486297,
+  "lines": [
+   "chuo",
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 49166,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962108",
+  "name": "堺筋本町",
+  "lat": 34.681867,
+  "lng": 135.506912,
+  "lines": [
+   "chuo",
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 111744,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162315",
+  "name": "森ノ宮",
+  "lat": 34.681508,
+  "lng": 135.532687,
+  "lines": [
+   "chuo",
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 36885,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962111",
+  "name": "緑橋",
+  "lat": 34.680756,
+  "lng": 135.545242,
+  "lines": [
+   "chuo",
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 24305,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962112",
+  "name": "深江橋",
+  "lat": 34.67909,
+  "lng": 135.557186,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 23070,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1164102",
+  "name": "高井田",
+  "lat": 34.678747,
+  "lng": 135.573113,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 18937,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3102301",
+  "name": "長田",
+  "lat": 34.678747,
+  "lng": 135.591919,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 19716,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "spatch-夢洲",
+  "name": "夢洲",
+  "lat": 34.6517082,
+  "lng": 135.3895961,
+  "lines": [
+   "chuo"
+  ],
+  "ridership": {
+   "value": 3809,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162506",
+  "name": "野田阪神",
+  "lat": 34.694384,
+  "lng": 135.476031,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 28828,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162308",
+  "name": "玉川",
+  "lat": 34.689607,
+  "lng": 135.476187,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 11703,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962204",
+  "name": "西長堀",
+  "lat": 34.675256,
+  "lng": 135.487223,
+  "lines": [
+   "sennichimae",
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 25603,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3200901",
+  "name": "桜川",
+  "lat": 34.668427,
+  "lng": 135.488839,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 19678,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3100102",
+  "name": "日本橋",
+  "lat": 34.667146,
+  "lng": 135.506635,
+  "lines": [
+   "sennichimae",
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 78684,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162317",
+  "name": "鶴橋",
+  "lat": 34.666032,
+  "lng": 135.529393,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 29297,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962210",
+  "name": "今里",
+  "lat": 34.668617,
+  "lng": 135.544274,
+  "lines": [
+   "sennichimae",
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 24301,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962211",
+  "name": "新深江",
+  "lat": 34.668158,
+  "lng": 135.553836,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 13919,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962212",
+  "name": "小路",
+  "lat": 34.661531,
+  "lng": 135.556245,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 9454,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962213",
+  "name": "北巽",
+  "lat": 34.652982,
+  "lng": 135.554964,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 14383,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962214",
+  "name": "南巽",
+  "lat": 34.643261,
+  "lng": 135.553298,
+  "lines": [
+   "sennichimae"
+  ],
+  "ridership": {
+   "value": 12209,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162311",
+  "name": "扇町",
+  "lat": 34.703809,
+  "lng": 135.5108,
+  "lines": [
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 18906,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3300139",
+  "name": "北浜",
+  "lat": 34.691588,
+  "lng": 135.506634,
+  "lines": [
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 67616,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962306",
+  "name": "長堀橋",
+  "lat": 34.674645,
+  "lng": 135.506357,
+  "lines": [
+   "sakaisuji",
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 55689,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962308",
+  "name": "恵美須町",
+  "lat": 34.65508,
+  "lng": 135.505575,
+  "lines": [
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 30108,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3200103",
+  "name": "天下茶屋",
+  "lat": 34.636847,
+  "lng": 135.496673,
+  "lines": [
+   "sakaisuji"
+  ],
+  "ridership": {
+   "value": 72394,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162305",
+  "name": "大正",
+  "lat": 34.665855,
+  "lng": 135.478882,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 11782,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3500209",
+  "name": "ドーム前千代崎",
+  "lat": 34.670757,
+  "lng": 135.479415,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 15419,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962404",
+  "name": "西大橋",
+  "lat": 34.675442,
+  "lng": 135.493575,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 13350,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962407",
+  "name": "松屋町",
+  "lat": 34.675479,
+  "lng": 135.512467,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 9820,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1162316",
+  "name": "玉造",
+  "lat": 34.674662,
+  "lng": 135.530251,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 15057,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962411",
+  "name": "大阪ビジネスパーク",
+  "lat": 34.692144,
+  "lng": 135.529688,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 13970,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1161724",
+  "name": "京橋",
+  "lat": 34.696885,
+  "lng": 135.529962,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 34897,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962413",
+  "name": "蒲生四丁目",
+  "lat": 34.700368,
+  "lng": 135.547709,
+  "lines": [
+   "nagahori",
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 18458,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962414",
+  "name": "今福鶴見",
+  "lat": 34.701913,
+  "lng": 135.560044,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 21969,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962415",
+  "name": "横堤",
+  "lat": 34.703532,
+  "lng": 135.57274,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 17560,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962416",
+  "name": "鶴見緑地",
+  "lat": 34.710754,
+  "lng": 135.580239,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 10940,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962417",
+  "name": "門真南",
+  "lat": 34.716865,
+  "lng": 135.59246,
+  "lines": [
+   "nagahori"
+  ],
+  "ridership": {
+   "value": 10684,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9965201",
+  "name": "井高野",
+  "lat": 34.75982037447907,
+  "lng": 135.54732084274292,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 6451,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9965202",
+  "name": "瑞光四丁目",
+  "lat": 34.752214,
+  "lng": 135.547085,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 9878,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9965203",
+  "name": "だいどう豊里",
+  "lat": 34.743805,
+  "lng": 135.544408,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 9913,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9965205",
+  "name": "清水",
+  "lat": 34.721379,
+  "lng": 135.563149,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 5727,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9965206",
+  "name": "新森古市",
+  "lat": 34.715197,
+  "lng": 135.558296,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 8046,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s3300135",
+  "name": "関目成育",
+  "lat": 34.712975,
+  "lng": 135.546353,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 6228,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s1161723",
+  "name": "鴫野",
+  "lat": 34.692605,
+  "lng": 135.545234,
+  "lines": [
+   "imazatosuji"
+  ],
+  "ridership": {
+   "value": 10636,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962502",
+  "name": "トレードセンター前",
+  "lat": 34.63865,
+  "lng": 135.412336,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 12668,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962503",
+  "name": "中ふ頭",
+  "lat": 34.634091,
+  "lng": 135.417416,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 4595,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962504",
+  "name": "ポートタウン西",
+  "lat": 34.630899,
+  "lng": 135.422777,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 9034,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962505",
+  "name": "ポートタウン東",
+  "lat": 34.630882,
+  "lng": 135.429085,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 12618,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962506",
+  "name": "フェリーターミナル",
+  "lat": 34.619253,
+  "lng": 135.434962,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 3920,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962507",
+  "name": "南港東",
+  "lat": 34.613826,
+  "lng": 135.438607,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 3835,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962508",
+  "name": "南港口",
+  "lat": 34.613826,
+  "lng": 135.445959,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 4544,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9962509",
+  "name": "平林",
+  "lat": 34.610683,
+  "lng": 135.458585,
+  "lines": [
+   "newtram"
+  ],
+  "ridership": {
+   "value": 4400,
+   "year": "2025年11月11日調査",
+   "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ }
+]
