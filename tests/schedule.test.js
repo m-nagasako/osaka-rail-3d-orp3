@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { buildProfile, buildDepartures, positionAt, buildSchedule, hmsToSec } from '../src/sim/schedule.js';
+import {
+  buildDepartures,
+  buildProfile,
+  buildReverseDistances,
+  buildSchedule,
+  hmsToSec,
+  positionAt,
+} from '../src/sim/schedule.js';
 
 // テスト路線: 駅4つ(0m/1000m/2500m/4000m)、36km/h=10m/s、停車30秒
 // → 期待プロファイル: 駅0{0,0} 駅1{100,130} 駅2{280,310} 駅3{460,460} 全所要T=460秒
@@ -69,5 +76,26 @@ describe('buildSchedule', () => {
     expect(s.T).toBeCloseTo(460);
     expect(s.departures.length).toBe(18);
     expect(s.profile.length).toBe(4);
+  });
+});
+
+describe('reverse direction schedule', () => {
+  const asymmetricDists = [0, 100, 250, 400];
+  it('逆方向用の駅距離配列を終点起点で組み立てる', () => {
+    expect(buildReverseDistances(asymmetricDists)).toEqual([0, 150, 300, 400]);
+  });
+
+  it('逆方向の停車位置が元の駅集合に一致する', () => {
+    const reverseSchedule = buildSchedule(buildReverseDistances(asymmetricDists), line);
+    const physicalStations = new Set(asymmetricDists);
+    const len = asymmetricDists[asymmetricDists.length - 1];
+
+    for (let i = 1; i < reverseSchedule.profile.length - 1; i++) {
+      const stop = reverseSchedule.profile[i];
+      const pos = positionAt(reverseSchedule.profile, (stop.arr + stop.dep) / 2);
+      const physicalDist = len - pos.dist;
+      const nearest = Math.min(...Array.from(physicalStations, (d) => Math.abs(d - physicalDist)));
+      expect(nearest).toBeLessThanOrEqual(1e-6);
+    }
   });
 });

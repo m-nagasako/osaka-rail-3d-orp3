@@ -15,6 +15,8 @@ export function createLines(scene, data, proj) {
       return new THREE.Vector3(x, line.elev[i] * CONFIG.EXAGGERATION, z);
     });
     const curve = new THREE.CatmullRomCurve3(points, false, 'centripetal', 0.5);
+    curve.arcLengthDivisions = Math.max(1, (points.length - 1) * 40);
+    curve.updateArcLengths();
     const geo = new THREE.TubeGeometry(
       curve, Math.max(64, points.length * 10), CONFIG.TUBE_RADIUS, 6, false
     );

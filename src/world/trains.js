@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { buildSchedule, positionAt } from '../sim/schedule.js';
+import { buildReverseDistances, buildSchedule, positionAt } from '../sim/schedule.js';
 import { state } from '../core/state.js';
 import { CONFIG } from '../config.js';
 
@@ -8,6 +8,8 @@ import { CONFIG } from '../config.js';
 function stationArcDistances(curve, nStations) {
   const perSeg = 40;
   const div = (nStations - 1) * perSeg;
+  curve.arcLengthDivisions = Math.max(1, div);
+  curve.updateArcLengths();
   const lengths = curve.getLengths(div); // 長さdiv+1、k番目 = t=k/div 地点の弧長
   return Array.from({ length: nStations }, (_, i) => lengths[i * perSeg]);
 }
@@ -18,13 +20,15 @@ export function createTrains(scene, data, lineObjects) {
   for (const { line, curve } of lineObjects.values()) {
     const dists = stationArcDistances(curve, line.stations.length);
     const sched = buildSchedule(dists, line);
+    const schedRev = buildSchedule(buildReverseDistances(dists), line);
     const minH = Math.min(...line.headways.map((h) => h.min)) * 60;
-    capacity += 2 * (Math.ceil(sched.T / minH) + 2); // 両方向の最大同時本数+余裕
+    capacity += 2 * (Math.ceil(Math.max(sched.T, schedRev.T) / minH) + 2); // 両方向の最大同時本数+余裕
     const color = new THREE.Color(line.color);
     per.push({
       line,
       curve,
       sched,
+      schedRev,
       len: dists[dists.length - 1],
       color,
       stoppedColor: color.clone().lerp(new THREE.Color(0xffffff), 0.48),
@@ -49,10 +53,11 @@ export function createTrains(scene, data, lineObjects) {
     for (const p of per) {
       if (!state.visibleLines.has(p.line.id)) continue; // レイヤOFFの路線は列車ごと消す
       for (const dir of [1, -1]) {
-        for (const d of p.sched.departures) {
+        const sched = dir === 1 ? p.sched : p.schedRev;
+        for (const d of sched.departures) {
           const e = simT - d;
-          if (e < 0 || e > p.sched.T) continue; // 未出発 or 到着済み
-          const pos = positionAt(p.sched.profile, e);
+          if (e < 0 || e > sched.T) continue; // 未出発 or 到着済み
+          const pos = positionAt(sched.profile, e);
           if (!pos || idx >= capacity) continue;
           const dist = dir === 1 ? pos.dist : p.len - pos.dist; // 逆方向は距離を反転
           const u = Math.min(Math.max(dist / p.len, 0), 1);

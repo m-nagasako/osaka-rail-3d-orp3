@@ -20,6 +20,12 @@ export function buildProfile(stationDistances, avgSpeedKmh, dwellSec) {
   return profile;
 }
 
+// 逆方向用の駅距離配列。物理終点を起点として、駅間距離の非対称性を保つ。
+export function buildReverseDistances(dists) {
+  const len = dists[dists.length - 1];
+  return dists.map((d) => len - d).reverse();
+}
+
 // サービス時間をヘッドウェイ表に従って出発時刻(秒)に展開
 export function buildDepartures(service, headways) {
   const start = hmsToSec(service.start), end = hmsToSec(service.end);
