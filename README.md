@@ -6,7 +6,7 @@
 公開URL: https://osaka-rail-3d-orp3.netlify.app/
 
 ## 必要環境
-Node.js 22系(開発環境と同一)。npmが使えること。
+Node.js 20.19以上(22/24で動作確認済み)。npmが使えること。
 
 ## コマンド
 ```

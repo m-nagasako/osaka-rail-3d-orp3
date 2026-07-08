@@ -16,7 +16,7 @@ export function createStationTooltip(data) {
     const ln = linesById.get(lid);
     const idx = ln.stations.indexOf(st.id);
     const e = ln.elev[idx];
-    return `<div class="tip-line"><span class="tip-chip" style="background:${ln.color}"></span>${ln.name}: ${e > 0 ? '+' + e : e}m</div>`;
+    return `<div class="tip-line"><span class="tip-chip" style="background:${ln.color}"></span>${ln.name}: ${e > 0 ? '+' + e : e}m (概算)</div>`;
   }).join('');
 
   function move(x, y) {
