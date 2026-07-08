@@ -4,6 +4,7 @@ import { state, on } from './core/state.js';
 import { createGround } from './world/ground.js';
 import { createLines } from './world/lines.js';
 import { createStations } from './world/stations.js';
+import { createStationLabels } from './world/station-labels.js';
 import { createTrains } from './world/trains.js';
 import { createRidershipBars } from './world/ridership.js';
 import { setupPicking } from './world/picking.js';
@@ -47,7 +48,7 @@ async function boot() {
     state.showRidership = false;
 
     const proj = createProjection(stations);
-    const { renderer, scene, camera, controls } = createScene(el);
+    const { renderer, labelRenderer, scene, camera, controls } = createScene(el);
 
     let extent = 0;
     for (const s of stations) {
@@ -58,6 +59,7 @@ async function boot() {
     createGeoDeco(scene, proj);
     const lineObjects = createLines(scene, data, proj);
     const stationsObj = createStations(scene, data, proj);
+    const labels = createStationLabels(scene, data, proj);
     const trains = createTrains(scene, data, lineObjects);
     const bars = createRidershipBars(scene, data, proj);
 
@@ -84,6 +86,7 @@ async function boot() {
     on('layers', () => {
       for (const [id, o] of lineObjects) o.mesh.visible = state.visibleLines.has(id);
       stationsObj.apply();
+      labels.update(camera, controls);
       bars.apply();
     });
 
@@ -95,7 +98,9 @@ async function boot() {
       const trainStats = trains.update(state.simTime);
       timeBar.refresh(trainStats);
       controls.update();
+      labels.update(camera, controls);
       renderer.render(scene, camera);
+      labelRenderer.render(scene, camera);
     });
   } catch (e) {
     el.innerHTML = `<div class="error">データの読み込みに失敗した。再読み込みしてみて。<br>${e.message}</div>`;
