@@ -18,6 +18,14 @@ Netlify管理画面:
 https://app.netlify.com/projects/osaka-rail-3d-orp3
 ```
 
+最新本番デプロイ:
+
+```text
+2026-07-08 Sprint1反映
+Deploy ID: 6a4e4fe24e9ccdc22d23afd4
+Unique deploy URL: https://6a4e4fe24e9ccdc22d23afd4--osaka-rail-3d-orp3.netlify.app
+```
+
 ## GitHub公開リポジトリ
 
 2026-07-08時点で、GitHub公開リポジトリへpush済みです。
