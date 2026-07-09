@@ -34,12 +34,13 @@
   "lat": 34.732919,
   "lng": 135.498558,
   "lines": [
-   "midosuji"
+   "midosuji",
+   "jr_kyoto"
   ],
   "ridership": {
-   "value": 163072,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 311772,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -182,12 +183,15 @@
   "lng": 135.51374,
   "lines": [
    "midosuji",
-   "tanimachi"
+   "tanimachi",
+   "jr_osaka_loop",
+   "yamatoji",
+   "hanwa"
   ],
   "ridership": {
-   "value": 253102,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 520760,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -224,7 +228,8 @@
   "lat": 34.609873,
   "lng": 135.513761,
   "lines": [
-   "midosuji"
+   "midosuji",
+   "hanwa"
   ],
   "ridership": {
    "value": 35090,
@@ -807,12 +812,13 @@
   "lat": 34.668547,
   "lng": 135.462381,
   "lines": [
-   "chuo"
+   "chuo",
+   "jr_osaka_loop"
   ],
   "ridership": {
-   "value": 42916,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 112632,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -866,12 +872,13 @@
   "lng": 135.532687,
   "lines": [
    "chuo",
-   "nagahori"
+   "nagahori",
+   "jr_osaka_loop"
   ],
   "ridership": {
-   "value": 36885,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 83715,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -1023,12 +1030,13 @@
   "lat": 34.666032,
   "lng": 135.529393,
   "lines": [
-   "sennichimae"
+   "sennichimae",
+   "jr_osaka_loop"
   ],
   "ridership": {
-   "value": 29297,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 204945,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -1179,12 +1187,13 @@
   "lat": 34.665855,
   "lng": 135.478882,
   "lines": [
-   "nagahori"
+   "nagahori",
+   "jr_osaka_loop"
   ],
   "ridership": {
-   "value": 11782,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 60034,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -1235,7 +1244,8 @@
   "lat": 34.674662,
   "lng": 135.530251,
   "lines": [
-   "nagahori"
+   "nagahori",
+   "jr_osaka_loop"
   ],
   "ridership": {
    "value": 15057,
@@ -1263,12 +1273,15 @@
   "lat": 34.696885,
   "lng": 135.529962,
   "lines": [
-   "nagahori"
+   "nagahori",
+   "jr_osaka_loop",
+   "jr_tozai",
+   "gakkentoshi"
   ],
   "ridership": {
-   "value": 34897,
-   "year": "2025年11月11日調査",
-   "source": "Osaka Metro 路線別駅別乗降人員"
+   "value": 268293,
+   "year": "2025年11月11日調査 + 2024年度(1日平均乗車人員×2換算)",
+   "source": "複数事業者合算: Osaka Metro 路線別駅別乗降人員 / JR西日本 データで見るJR西日本2025 上位50駅"
   }
  },
  {
@@ -1432,7 +1445,8 @@
   "lat": 34.692605,
   "lng": 135.545234,
   "lines": [
-   "imazatosuji"
+   "imazatosuji",
+   "gakkentoshi"
   ],
   "ridership": {
    "value": 10636,
@@ -1625,6 +1639,663 @@
    "year": "未投入",
    "source": "北大阪急行駅別乗降人員は未投入",
    "note": "北大阪急行の駅別乗降人員データはSprint2時点で未投入"
+  }
+ },
+ {
+  "id": "s1160720b",
+  "name": "新今宮",
+  "lat": 34.650149,
+  "lng": 135.501076,
+  "lines": [
+   "jr_osaka_loop",
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": 126228,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1160721",
+  "name": "今宮",
+  "lat": 34.654156,
+  "lng": 135.492975,
+  "lines": [
+   "jr_osaka_loop",
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162304",
+  "name": "芦原橋",
+  "lat": 34.658608,
+  "lng": 135.48924,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162307",
+  "name": "西九条",
+  "lat": 34.68269,
+  "lng": 135.466779,
+  "lines": [
+   "jr_osaka_loop",
+   "jr_yumesaki"
+  ],
+  "ridership": {
+   "value": 66830,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1162308b",
+  "name": "野田",
+  "lat": 34.689069,
+  "lng": 135.474837,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162309",
+  "name": "福島",
+  "lat": 34.697167,
+  "lng": 135.486563,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": 56884,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1160214d",
+  "name": "大阪",
+  "lat": 34.702398,
+  "lng": 135.495188,
+  "lines": [
+   "jr_osaka_loop",
+   "jr_kyoto",
+   "jr_kobe"
+  ],
+  "ridership": {
+   "value": 751006,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1162311b",
+  "name": "天満",
+  "lat": 34.704923,
+  "lng": 135.512233,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": 51750,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1162312",
+  "name": "桜ノ宮",
+  "lat": 34.704976,
+  "lng": 135.520944,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162314",
+  "name": "大阪城公園",
+  "lat": 34.68858,
+  "lng": 135.534482,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162318",
+  "name": "桃谷",
+  "lat": 34.658453,
+  "lng": 135.527908,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162319",
+  "name": "寺田町",
+  "lat": 34.647957,
+  "lng": 135.523437,
+  "lines": [
+   "jr_osaka_loop"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162402",
+  "name": "安治川口",
+  "lat": 34.673416,
+  "lng": 135.443921,
+  "lines": [
+   "jr_yumesaki"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162403",
+  "name": "ユニバーサルシティ",
+  "lat": 34.667842,
+  "lng": 135.438705,
+  "lines": [
+   "jr_yumesaki"
+  ],
+  "ridership": {
+   "value": 70634,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1162404",
+  "name": "桜島",
+  "lat": 34.662065,
+  "lng": 135.432136,
+  "lines": [
+   "jr_yumesaki"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162502",
+  "name": "大阪城北詰",
+  "lat": 34.694283,
+  "lng": 135.525538,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162503b",
+  "name": "大阪天満宮",
+  "lat": 34.697404,
+  "lng": 135.513442,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": 47942,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1160214e",
+  "name": "北新地",
+  "lat": 34.698323,
+  "lng": 135.497038,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": 84858,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1162309b",
+  "name": "新福島",
+  "lat": 34.695094,
+  "lng": 135.48593,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162506b",
+  "name": "海老江",
+  "lat": 34.69544,
+  "lng": 135.473276,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162507",
+  "name": "御幣島",
+  "lat": 34.71259,
+  "lng": 135.45568,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162508",
+  "name": "加島",
+  "lat": 34.727496,
+  "lng": 135.454183,
+  "lines": [
+   "jr_tozai"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160303",
+  "name": "尼崎",
+  "lat": 34.731791,
+  "lng": 135.431685,
+  "lines": [
+   "jr_tozai",
+   "jr_kobe"
+  ],
+  "ridership": {
+   "value": 89252,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1161722",
+  "name": "放出",
+  "lat": 34.688103,
+  "lng": 135.563296,
+  "lines": [
+   "jr_osaka_higashi",
+   "gakkentoshi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1164102b",
+  "name": "高井田中央",
+  "lat": 34.678764,
+  "lng": 135.572362,
+  "lines": [
+   "jr_osaka_higashi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1164103",
+  "name": "ＪＲ河内永和",
+  "lat": 34.664717,
+  "lng": 135.572255,
+  "lines": [
+   "jr_osaka_higashi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1164104",
+  "name": "ＪＲ俊徳道",
+  "lat": 34.658372,
+  "lng": 135.572421,
+  "lines": [
+   "jr_osaka_higashi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1164105",
+  "name": "ＪＲ長瀬",
+  "lat": 34.649516,
+  "lng": 135.570168,
+  "lines": [
+   "jr_osaka_higashi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160716",
+  "name": "新加美",
+  "lat": 34.626861,
+  "lng": 135.568588,
+  "lines": [
+   "jr_osaka_higashi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160715",
+  "name": "久宝寺",
+  "lat": 34.622558,
+  "lng": 135.583988,
+  "lines": [
+   "jr_osaka_higashi",
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160211",
+  "name": "吹田",
+  "lat": 34.763209,
+  "lng": 135.523642,
+  "lines": [
+   "jr_kyoto"
+  ],
+  "ridership": {
+   "value": 45924,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1160212",
+  "name": "東淀川",
+  "lat": 34.73938,
+  "lng": 135.503915,
+  "lines": [
+   "jr_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160302",
+  "name": "塚本",
+  "lat": 34.71271,
+  "lng": 135.468843,
+  "lines": [
+   "jr_kobe"
+  ],
+  "ridership": {
+   "value": 39146,
+   "year": "2024年度(1日平均乗車人員×2換算)",
+   "source": "JR西日本 データで見るJR西日本2025 上位50駅"
+  }
+ },
+ {
+  "id": "s1160716b",
+  "name": "加美",
+  "lat": 34.626888,
+  "lng": 135.566939,
+  "lines": [
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160717",
+  "name": "平野",
+  "lat": 34.630842,
+  "lng": 135.551612,
+  "lines": [
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160718",
+  "name": "東部市場前",
+  "lat": 34.638056,
+  "lng": 135.537802,
+  "lines": [
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1160722",
+  "name": "ＪＲ難波",
+  "lat": 34.666438,
+  "lng": 135.495265,
+  "lines": [
+   "yamatoji"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162602",
+  "name": "美章園",
+  "lat": 34.638411,
+  "lng": 135.523765,
+  "lines": [
+   "hanwa"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162603",
+  "name": "南田辺",
+  "lat": 34.625551,
+  "lng": 135.52086,
+  "lines": [
+   "hanwa"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162604",
+  "name": "鶴ケ丘",
+  "lat": 34.617999,
+  "lng": 135.517088,
+  "lines": [
+   "hanwa"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162606",
+  "name": "我孫子町",
+  "lat": 34.601873,
+  "lng": 135.50667,
+  "lines": [
+   "hanwa"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162607",
+  "name": "杉本町",
+  "lat": 34.593113,
+  "lng": 135.503034,
+  "lines": [
+   "hanwa"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1162608",
+  "name": "浅香",
+  "lat": 34.585303,
+  "lng": 135.502423,
+  "lines": [
+   "hanwa"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s1161721",
+  "name": "徳庵",
+  "lat": 34.692423,
+  "lng": 135.581386,
+  "lines": [
+   "gakkentoshi"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "2024年度",
+   "source": "JR西日本 データで見るJR西日本2025",
+   "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
   }
  }
 ]

@@ -24,7 +24,18 @@ const LINE_DEFS = [
   { id: 'imazatosuji', operator: 'Osaka Metro', ekidataId: 99652, name: '今里筋線',   expectedBase: 11 },
   { id: 'newtram',     operator: 'Osaka Metro', ekidataId: 99625, name: '南港ポートタウン線', expectedBase: 10 },
   { id: 'kita_kyuko',  operator: '北大阪急行', ekidataId: 99614, name: '南北線', expectedBase: 4 },
+  { id: 'jr_osaka_loop', operator: 'JR西日本', ekidataId: 11623, name: '大阪環状線', expectedBase: 19 },
+  { id: 'jr_yumesaki', operator: 'JR西日本', ekidataId: 11624, name: 'JRゆめ咲線', expectedBase: 4 },
+  { id: 'jr_tozai', operator: 'JR西日本', ekidataId: 11625, name: 'JR東西線', expectedBase: 9 },
+  { id: 'jr_osaka_higashi', operator: 'JR西日本', ekidataId: 11641, name: 'おおさか東線', expectedBase: 7 },
+  { id: 'jr_kyoto', operator: 'JR西日本', ekidataId: 11602, name: 'JR京都線', expectedBase: 4, startName: '吹田', endName: '大阪' },
+  { id: 'jr_kobe', operator: 'JR西日本', ekidataId: 11603, name: 'JR神戸線', expectedBase: 3, startName: '大阪', endName: '尼崎' },
+  { id: 'yamatoji', operator: 'JR西日本', ekidataId: 11607, name: '大和路線', expectedBase: 8, startName: '久宝寺', endName: 'ＪＲ難波' },
+  { id: 'hanwa', operator: 'JR西日本', ekidataId: 11626, name: '阪和線', expectedBase: 8, startName: '天王寺', endName: '浅香' },
+  { id: 'gakkentoshi', operator: 'JR西日本', ekidataId: 11617, name: '学研都市線', expectedBase: 4, startName: '徳庵', endName: '京橋' },
 ];
+const operatorByLine = new Map(LINE_DEFS.map((d) => [d.id, d.operator]));
+const JR_OPERATOR = 'JR西日本';
 
 // ---- パッチ読込 ----
 const loadJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -62,13 +73,25 @@ function addStation(gid, name, lat, lng, lineId) {
   return node.id;
 }
 
+function selectStations(src, def) {
+  if (!def.startName && !def.endName) return src.stations;
+  const start = src.stations.findIndex((s) => s.name.ja === def.startName);
+  const end = src.stations.findIndex((s) => s.name.ja === def.endName);
+  if (start < 0 || end < 0) {
+    errors.push(`${def.name}: 抽出端点が見つからない (${def.startName}→${def.endName})`);
+    return src.stations;
+  }
+  const a = Math.min(start, end), b = Math.max(start, end);
+  return src.stations.slice(a, b + 1);
+}
+
 const lines = [];
 for (const def of LINE_DEFS) {
   const src = osaka.lines.find((l) => l.id === def.ekidataId);
   if (!src) { errors.push(`路線が元データに無い: ${def.name}(${def.ekidataId})`); continue; }
 
   // 駅を順序どおりに登録
-  let ids = src.stations.map((s) =>
+  let ids = selectStations(src, def).map((s) =>
     addStation(s.gid, s.name.ja, s.location.lat, s.location.lng, def.id)
   );
 
@@ -108,20 +131,50 @@ for (const def of LINE_DEFS) {
 }
 
 // ---- 乗降人員の投入(駅名で照合、ヶ/ケの表記ゆれを吸収) ----
-const norm = (s) => s.replace(/ヶ/g, 'ケ');
-const nameIndex = new Map([...byId.values()].map((n) => [norm(n.name), n]));
+const norm = (s) => s.replace(/ヶ/g, 'ケ').replace(/ＪＲ/g, 'JR');
+const nameIndex = new Map();
+for (const node of byId.values()) {
+  const key = norm(node.name);
+  if (!nameIndex.has(key)) nameIndex.set(key, []);
+  nameIndex.get(key).push(node);
+}
+function nodeForRidership(name, preferredOperator) {
+  const nodes = nameIndex.get(norm(name)) || [];
+  if (!nodes.length) return null;
+  if (preferredOperator) {
+    const preferred = nodes.find((node) => node.lines.some((lid) => operatorByLine.get(lid) === preferredOperator));
+    if (preferred) return preferred;
+  }
+  return nodes[0];
+}
+function applyRidership(node, entry) {
+  if (!node.ridership || node.ridership.value == null || entry.value == null) {
+    node.ridership = entry;
+    return;
+  }
+  node.ridership = {
+    value: node.ridership.value + entry.value,
+    year: `${node.ridership.year} + ${entry.year}`,
+    source: `複数事業者合算: ${node.ridership.source} / ${entry.source}`,
+  };
+}
 for (const [name, value] of Object.entries(rider.data)) {
-  const node = nameIndex.get(norm(name));
+  const node = nodeForRidership(name, 'Osaka Metro');
   if (!node) { errors.push(`乗降人員: 駅名が一致しない「${name}」`); continue; }
-  node.ridership = { value, year: rider.year, source: rider.source };
+  applyRidership(node, { value, year: rider.year, source: rider.source });
+}
+for (const [name, data] of Object.entries(rider.stationData || {})) {
+  const node = nodeForRidership(name, data.operator || null);
+  if (!node) { errors.push(`乗降人員(個別): 駅名が一致しない「${name}」`); continue; }
+  applyRidership(node, { value: data.value, year: data.year, source: data.source });
 }
 for (const [name, into] of Object.entries(rider.aggregatedInto)) {
-  const node = nameIndex.get(norm(name));
+  const node = nodeForRidership(name, 'Osaka Metro');
   if (!node) { errors.push(`乗降人員(集計先): 駅名が一致しない「${name}」`); continue; }
   node.ridership = { value: null, year: rider.year, source: rider.source, note: `${into}駅で集計` };
 }
 for (const [name, note] of Object.entries(rider.stationNotes || {})) {
-  const node = nameIndex.get(norm(name));
+  const node = nodeForRidership(name, note.operator || null);
   if (!node) { errors.push(`乗降人員(注記): 駅名が一致しない「${name}」`); continue; }
   node.ridership = {
     value: null,
@@ -129,6 +182,16 @@ for (const [name, note] of Object.entries(rider.stationNotes || {})) {
     source: note.source || rider.source,
     note: note.note,
   };
+}
+for (const node of byId.values()) {
+  if (node.ridership == null && node.lines.some((lid) => operatorByLine.get(lid) === JR_OPERATOR)) {
+    node.ridership = {
+      value: null,
+      year: '2024年度',
+      source: 'JR西日本 データで見るJR西日本2025',
+      note: 'JR西日本公表の上位50駅表に未掲載のため個別値未投入',
+    };
+  }
 }
 
 // ---- 検証 ----
@@ -225,6 +288,8 @@ const meta = {
     { name: 'japan-train-data v0.6.0 (npm)', license: 'MIT', note: '駅座標・路線構成(2017年時点)。公開時はN02系統への差し替え推奨' },
     { name: 'Osaka Metro 路線別駅別乗降人員(2025年11月11日交通調査)', license: '公表資料', note: '乗降人員' },
     { name: '北大阪急行電鉄 路線図・各駅情報', license: '公式サイト', note: '南北線の駅構成・時刻表(2026-07-09取得)' },
+    { name: 'JR西日本 データで見るJR西日本2025', license: '公表資料', note: 'JR路線構成・駅上位50の2024年度1日平均乗車人員(2026-07-10取得)' },
+    { name: 'JRおでかけネット 駅情報', license: '公式サイト', note: 'JR境界駅の所在地確認(2026-07-10取得)' },
     { name: 'colordic.org メトロカラー', license: '参照(色名は複数ソースで照合)', note: 'ラインカラー' },
     { name: 'Googleプレイス検索/Wikipedia', license: '参照', note: '夢洲駅の座標・開業情報(2026-07-07取得)' },
     { name: 'Wikipedia/GeoHack', license: 'CC BY-SA等', note: '箕面萱野・箕面船場阪大前の概略座標(2026-07-09取得)' },
@@ -240,6 +305,8 @@ const meta = {
     '深さは概算・縦方向は誇張表示',
     '線形は駅間を滑らかに補間した近似(実際の線路形状ではない)',
     '直通運転は非対応(各路線内で折返し)',
+    'JR西日本路線は大阪市内+市境1駅を基本に収録。おおさか東線は短距離で市域を出入りするため全7駅を収録',
+    'JR西日本の乗降人員は、同社公表の乗車人員上位50駅を2倍した換算値。上位50に無い駅は注記表示',
     '中央線の夢洲〜コスモスクエア間は実際は約半数運行だが、全列車直通として近似',
     'ランドマークは装飾用の概略座標であり、精密な境界・建物形状ではない',
     ...pending.map((p) => `[未確定] ${p}`),

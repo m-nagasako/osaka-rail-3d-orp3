@@ -17,7 +17,16 @@
     "nagahori": -22,
     "imazatosuji": -24,
     "newtram": 12,
-    "kita_kyuko": 8
+    "kita_kyuko": 8,
+    "jr_osaka_loop": 10,
+    "jr_yumesaki": 0,
+    "jr_tozai": -18,
+    "jr_osaka_higashi": 10,
+    "jr_kyoto": 8,
+    "jr_kobe": 8,
+    "yamatoji": 0,
+    "hanwa": 0,
+    "gakkentoshi": 0
   },
   "overrides": {
     "midosuji": {
@@ -53,6 +62,35 @@
       "千里中央": -10,
       "箕面船場阪大前": -18,
       "箕面萱野": 12
+    },
+    "jr_tozai": {
+      "京橋": -12,
+      "大阪城北詰": -18,
+      "大阪天満宮": -18,
+      "北新地": -18,
+      "新福島": -18,
+      "海老江": -18,
+      "御幣島": -18,
+      "加島": -18,
+      "尼崎": 0
+    },
+    "jr_kyoto": {
+      "大阪": 10,
+      "新大阪": 10,
+      "東淀川": 8,
+      "吹田": 8
+    },
+    "jr_kobe": {
+      "大阪": 10,
+      "塚本": 4,
+      "尼崎": 0
+    },
+    "hanwa": {
+      "天王寺": 0,
+      "浅香": 0
+    },
+    "gakkentoshi": {
+      "京橋": -2
     }
   }
 }

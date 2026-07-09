@@ -18,10 +18,10 @@ const km = (a, b) => {
 };
 
 describe('生成データの整合(L2回帰)', () => {
-  it('規模: 10路線・ユニーク114駅・延べ140駅', () => {
-    expect(lines.length).toBe(10);
-    expect(stations.length).toBe(114);
-    expect(lines.reduce((a, l) => a + l.stations.length, 0)).toBe(140);
+  it('規模: 19路線・ユニーク158駅・延べ206駅', () => {
+    expect(lines.length).toBe(19);
+    expect(stations.length).toBe(158);
+    expect(lines.reduce((a, l) => a + l.stations.length, 0)).toBe(206);
   });
   it('路線↔駅の相互参照が閉じている', () => {
     for (const ln of lines) for (const sid of ln.stations) {
@@ -65,7 +65,7 @@ describe('生成データの整合(L2回帰)', () => {
       const r = st.ridership;
       expect(r, st.name).toBeTruthy();
       if (r.value === null) expect(typeof r.note).toBe('string');
-      else { expect(r.value).toBeGreaterThan(0); expect(r.year).toContain('2025'); }
+      else { expect(r.value).toBeGreaterThan(0); expect(typeof r.year).toBe('string'); }
     }
   });
   it('meta: 出典3件以上と近似の注意書きを含む', () => {
@@ -96,6 +96,48 @@ describe('生成データの整合(L2回帰)', () => {
     const esaka = stations.filter((s) => s.name === '江坂');
     expect(esaka).toHaveLength(1);
     expect(esaka[0].lines).toEqual(expect.arrayContaining(['midosuji', 'kita_kyuko']));
+  });
+  it('M2-JR: JR西日本9路線を市内+境界駅範囲で収録する', () => {
+    const expected = {
+      jr_osaka_loop: ['天王寺', '新今宮', '今宮', '芦原橋', '大正', '弁天町', '西九条', '野田', '福島', '大阪', '天満', '桜ノ宮', '京橋', '大阪城公園', '森ノ宮', '玉造', '鶴橋', '桃谷', '寺田町'],
+      jr_yumesaki: ['西九条', '安治川口', 'ユニバーサルシティ', '桜島'],
+      jr_tozai: ['京橋', '大阪城北詰', '大阪天満宮', '北新地', '新福島', '海老江', '御幣島', '加島', '尼崎'],
+      jr_osaka_higashi: ['放出', '高井田中央', 'ＪＲ河内永和', 'ＪＲ俊徳道', 'ＪＲ長瀬', '新加美', '久宝寺'],
+      jr_kyoto: ['吹田', '東淀川', '新大阪', '大阪'],
+      jr_kobe: ['大阪', '塚本', '尼崎'],
+      yamatoji: ['久宝寺', '加美', '平野', '東部市場前', '天王寺', '新今宮', '今宮', 'ＪＲ難波'],
+      hanwa: ['天王寺', '美章園', '南田辺', '鶴ケ丘', '長居', '我孫子町', '杉本町', '浅香'],
+      gakkentoshi: ['徳庵', '放出', '鴫野', '京橋'],
+    };
+    for (const [id, names] of Object.entries(expected)) {
+      const line = lines.find((l) => l.id === id);
+      expect(line, id).toBeDefined();
+      expect(line.operator).toBe('JR西日本');
+      expect(line.stations.map((sid) => byId.get(sid).name)).toEqual(names);
+    }
+
+    expect(stations.filter((s) => s.name === '大阪')).toHaveLength(1);
+    expect(stations.find((s) => s.name === '大阪').lines).toEqual(expect.arrayContaining(['jr_osaka_loop', 'jr_kyoto', 'jr_kobe']));
+    expect(stations.find((s) => s.name === '梅田').lines).toEqual(['midosuji']);
+    expect(stations.find((s) => s.name === '天王寺').lines).toEqual(expect.arrayContaining(['midosuji', 'tanimachi', 'jr_osaka_loop', 'yamatoji', 'hanwa']));
+    expect(stations.filter((s) => s.name === '平野')).toHaveLength(2);
+  });
+  it('M2-JR追加後も既存10路線の駅数は不変', () => {
+    const expectedCounts = {
+      midosuji: 20,
+      tanimachi: 26,
+      yotsubashi: 11,
+      chuo: 15,
+      sennichimae: 14,
+      sakaisuji: 10,
+      nagahori: 17,
+      imazatosuji: 11,
+      newtram: 10,
+      kita_kyuko: 6,
+    };
+    for (const [id, count] of Object.entries(expectedCounts)) {
+      expect(lines.find((l) => l.id === id).stations.length, id).toBe(count);
+    }
   });
   it('ランドマーク: 指定6件が装飾データとして生成される', () => {
     expect(landmarks).toHaveLength(6);
