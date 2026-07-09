@@ -6,6 +6,8 @@ export const state = {
   simTime: 8 * 3600,        // シミュ時刻(0時からの秒)
   speed: 60,                // 倍速
   running: true,
+  showRidership: false,
+  showDecorations: true,
 };
 export function on(event, fn) {
   if (!listeners.has(event)) listeners.set(event, []);

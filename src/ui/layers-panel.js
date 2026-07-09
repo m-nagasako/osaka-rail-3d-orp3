@@ -8,6 +8,7 @@ export function createLayersPanel(data) {
     <h2>路線レイヤ</h2>
     <div class="tools"><button class="all">全表示</button><button class="none">全非表示</button></div>
     <div class="list"></div>
+    <div class="sw row"><input type="checkbox" id="sw-deco" checked><label for="sw-deco" class="nm">装飾(海岸線・淀川・ランドマーク)</label></div>
     <div class="sw row"><input type="checkbox" id="sw-rider"><label for="sw-rider" class="nm">乗降人員バー(√スケール)</label></div>`;
   document.body.appendChild(el);
 
@@ -62,6 +63,7 @@ export function createLayersPanel(data) {
     soloed = null; state.visibleLines.clear(); sync(); change();
   };
   el.querySelector('#sw-rider').onchange = (e) => { state.showRidership = e.target.checked; change(); };
+  el.querySelector('#sw-deco').onchange = (e) => { state.showDecorations = e.target.checked; change(); };
 
   // モバイル: 開閉ボタン
   document.getElementById('toggle-layers').onclick = () => el.classList.toggle('open');

@@ -9,6 +9,7 @@ import { createTrains } from './world/trains.js';
 import { createRidershipBars } from './world/ridership.js';
 import { setupPicking } from './world/picking.js';
 import { createGeoDeco } from './world/geo-deco.js';
+import { createLandmarks } from './world/landmarks.js';
 import { createFly } from './core/camera-fly.js';
 import { createViewButtons } from './ui/view-buttons.js';
 import { createRanking } from './ui/ranking.js';
@@ -37,15 +38,17 @@ function buildCredits(meta) {
 async function boot() {
   const el = document.getElementById('app');
   try {
-    const [stations, lines, meta] = await Promise.all([
+    const [stations, lines, meta, landmarks] = await Promise.all([
       loadJSON('data/stations.json'),
       loadJSON('data/lines.json'),
       loadJSON('data/meta.json'),
+      loadJSON('data/landmarks.json'),
     ]);
-    const data = { stations, lines, meta };
+    const data = { stations, lines, meta, landmarks };
     state.data = data;
     state.visibleLines = new Set(lines.map((l) => l.id));
     state.showRidership = false;
+    state.showDecorations = true;
 
     const proj = createProjection(stations);
     const { renderer, labelRenderer, scene, camera, controls } = createScene(el);
@@ -56,7 +59,8 @@ async function boot() {
       extent = Math.max(extent, Math.abs(x), Math.abs(z));
     }
     createGround(scene, extent * 2);
-    createGeoDeco(scene, proj);
+    const geoDeco = createGeoDeco(scene, proj);
+    const landmarksObj = createLandmarks(scene, landmarks, proj);
     const lineObjects = createLines(scene, data, proj);
     const stationsObj = createStations(scene, data, proj);
     const labels = createStationLabels(scene, data, proj);
@@ -88,6 +92,8 @@ async function boot() {
       stationsObj.apply();
       labels.update(camera, controls);
       bars.apply();
+      geoDeco.apply();
+      landmarksObj.apply();
     });
 
     let last = performance.now();

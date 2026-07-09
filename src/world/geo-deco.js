@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { state } from '../core/state.js';
 
 // 模式的な海岸線(大阪湾)と淀川のライン。
 // ※装飾目的の手描きデフォルメであり実測データではない(精度非保証)。外部設計F1の但し書きどおり
@@ -8,14 +9,19 @@ const YODO  = [[34.737,135.565],[34.728,135.530],[34.720,135.501],[34.713,135.47
                [34.701,135.444],[34.690,135.414]];
 
 export function createGeoDeco(scene, proj) {
+  const group = new THREE.Group();
+  scene.add(group);
   const mk = (pts, opacity) => {
     const v = pts.map(([lat, lng]) => {
       const { x, z } = proj.toXZ(lat, lng);
       return new THREE.Vector3(x, 3, z);
     });
     const g = new THREE.BufferGeometry().setFromPoints(v);
-    scene.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0x2e5a70, transparent: true, opacity })));
+    group.add(new THREE.Line(g, new THREE.LineBasicMaterial({ color: 0x2e5a70, transparent: true, opacity })));
   };
   mk(COAST, 0.85);
   mk(YODO, 0.6);
+  const apply = () => { group.visible = state.showDecorations; };
+  apply();
+  return { apply, group };
 }

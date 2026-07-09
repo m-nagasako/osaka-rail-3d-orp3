@@ -1,0 +1,67 @@
+{
+  "_comment": "装飾用ランドマーク。座標は施設代表点の概略で、精密測量値ではない",
+  "_sources": [
+    {
+      "name": "Wikipedia/GeoHack landmark coordinates",
+      "license": "CC BY-SA等",
+      "note": "ランドマーク6件の概略座標",
+      "acquired": "2026-07-09"
+    },
+    {
+      "name": "各施設公式サイト",
+      "license": "公式サイト",
+      "note": "施設名称・所在地確認",
+      "acquired": "2026-07-09"
+    }
+  ],
+  "items": [
+    {
+      "id": "osaka_castle",
+      "name": "大阪城",
+      "lat": 34.68722,
+      "lng": 135.52583,
+      "heightM": 55,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Osaka_Castle"
+    },
+    {
+      "id": "tsutenkaku",
+      "name": "通天閣",
+      "lat": 34.65222,
+      "lng": 135.50611,
+      "heightM": 108,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ts%C5%ABtenkaku"
+    },
+    {
+      "id": "abeno_harukas",
+      "name": "あべのハルカス",
+      "lat": 34.646,
+      "lng": 135.513389,
+      "heightM": 300,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Abeno_Harukas"
+    },
+    {
+      "id": "kyocera_dome",
+      "name": "京セラドーム大阪",
+      "lat": 34.6693,
+      "lng": 135.476103,
+      "heightM": 83,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kyocera_Dome_Osaka"
+    },
+    {
+      "id": "kaiyukan",
+      "name": "海遊館",
+      "lat": 34.654472,
+      "lng": 135.428889,
+      "heightM": 36,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Osaka_Aquarium_Kaiyukan"
+    },
+    {
+      "id": "tower_of_the_sun",
+      "name": "太陽の塔",
+      "lat": 34.809639,
+      "lng": 135.532306,
+      "heightM": 70,
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tower_of_the_Sun"
+    }
+  ]
+}

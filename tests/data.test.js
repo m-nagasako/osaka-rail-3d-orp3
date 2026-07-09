@@ -7,6 +7,7 @@ const load = (f) => JSON.parse(readFileSync(new URL(`../public/data/${f}`, impor
 const stations = load('stations.json');
 const lines = load('lines.json');
 const meta = load('meta.json');
+const landmarks = load('landmarks.json');
 const byId = new Map(stations.map((s) => [s.id, s]));
 
 const R = 6371, rad = (d) => (d * Math.PI) / 180;
@@ -71,6 +72,7 @@ describe('生成データの整合(L2回帰)', () => {
     expect(meta.sources.length).toBeGreaterThanOrEqual(3);
     expect(meta.notes.some((n) => n.includes('近似'))).toBe(true);
     expect(meta.notes.some((n) => n.includes('夢洲'))).toBe(true);
+    expect(meta.notes.some((n) => n.includes('ランドマーク'))).toBe(true);
   });
   it('距離サニティ: 梅田〜なんば直線3.5〜5.0km', () => {
     const d = km(stations.find((s) => s.name === '梅田'), stations.find((s) => s.name === 'なんば'));
@@ -94,5 +96,23 @@ describe('生成データの整合(L2回帰)', () => {
     const esaka = stations.filter((s) => s.name === '江坂');
     expect(esaka).toHaveLength(1);
     expect(esaka[0].lines).toEqual(expect.arrayContaining(['midosuji', 'kita_kyuko']));
+  });
+  it('ランドマーク: 指定6件が装飾データとして生成される', () => {
+    expect(landmarks).toHaveLength(6);
+    expect(landmarks.map((l) => l.name)).toEqual([
+      '大阪城',
+      '通天閣',
+      'あべのハルカス',
+      '京セラドーム大阪',
+      '海遊館',
+      '太陽の塔',
+    ]);
+    for (const lm of landmarks) {
+      expect(lm.lat, lm.name).toBeGreaterThan(34.3);
+      expect(lm.lat, lm.name).toBeLessThan(34.9);
+      expect(lm.lng, lm.name).toBeGreaterThan(135.2);
+      expect(lm.lng, lm.name).toBeLessThan(135.7);
+      expect(lm.heightM, lm.name).toBeGreaterThan(0);
+    }
   });
 });

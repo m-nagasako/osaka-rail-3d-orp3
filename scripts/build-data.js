@@ -32,6 +32,7 @@ const lineMeta   = loadJson(path.join(DIR, 'patches', 'line-meta.json'));
 const elevations = loadJson(path.join(DIR, 'patches', 'elevations.json'));
 const newSta     = loadJson(path.join(DIR, 'patches', 'new-stations.json'));
 const rider      = loadJson(path.join(DIR, 'patches', 'ridership.json'));
+const landmarkPatch = loadJson(path.join(DIR, 'patches', 'landmarks.json'));
 
 const errors = [];
 const warnings = [];
@@ -189,6 +190,22 @@ if (umeda && namba) {
   errors.push('距離サニティ: 梅田またはなんばが見つからない');
 }
 
+// ランドマーク(装飾レイヤ)
+const landmarks = landmarkPatch.items || [];
+const landmarkIds = new Set();
+const landmarkNames = new Set();
+for (const lm of landmarks) {
+  if (!/^[a-z0-9_]+$/.test(lm.id)) errors.push(`ランドマークIDが不正: ${lm.id}`);
+  if (landmarkIds.has(lm.id)) errors.push(`ランドマークID重複: ${lm.id}`);
+  if (landmarkNames.has(lm.name)) errors.push(`ランドマーク名重複: ${lm.name}`);
+  landmarkIds.add(lm.id);
+  landmarkNames.add(lm.name);
+  if (lm.lat < 34.3 || lm.lat > 34.9 || lm.lng < 135.2 || lm.lng > 135.7) {
+    errors.push(`${lm.name}: ランドマーク座標が大阪近辺の範囲外 (${lm.lat}, ${lm.lng})`);
+  }
+  if (!(lm.heightM > 0)) errors.push(`${lm.name}: ランドマーク高さが不正 ${lm.heightM}`);
+}
+
 // 乗降人員の未投入数(工程②までは警告)
 const noRider = [...byId.values()].filter((s) => s.ridership == null).length;
 if (noRider) warnings.push(`乗降人員 未投入: ${noRider}駅(工程②で投入)`);
@@ -211,6 +228,11 @@ const meta = {
     { name: 'colordic.org メトロカラー', license: '参照(色名は複数ソースで照合)', note: 'ラインカラー' },
     { name: 'Googleプレイス検索/Wikipedia', license: '参照', note: '夢洲駅の座標・開業情報(2026-07-07取得)' },
     { name: 'Wikipedia/GeoHack', license: 'CC BY-SA等', note: '箕面萱野・箕面船場阪大前の概略座標(2026-07-09取得)' },
+    ...landmarkPatch._sources.map((s) => ({
+      name: s.name,
+      license: s.license,
+      note: `${s.note}(${s.acquired}取得)`,
+    })),
   ],
   generatedAt: new Date().toISOString(),
   notes: [
@@ -219,6 +241,7 @@ const meta = {
     '線形は駅間を滑らかに補間した近似(実際の線路形状ではない)',
     '直通運転は非対応(各路線内で折返し)',
     '中央線の夢洲〜コスモスクエア間は実際は約半数運行だが、全列車直通として近似',
+    'ランドマークは装飾用の概略座標であり、精密な境界・建物形状ではない',
     ...pending.map((p) => `[未確定] ${p}`),
   ],
 };
@@ -239,4 +262,5 @@ for (const ln of lines) delete ln._expected;
 fs.writeFileSync(path.join(OUT, 'stations.json'), JSON.stringify([...byId.values()], null, 1));
 fs.writeFileSync(path.join(OUT, 'lines.json'), JSON.stringify(lines, null, 1));
 fs.writeFileSync(path.join(OUT, 'meta.json'), JSON.stringify(meta, null, 1));
+fs.writeFileSync(path.join(OUT, 'landmarks.json'), JSON.stringify(landmarks, null, 1));
 console.log(`出力完了 → ${OUT}`);
