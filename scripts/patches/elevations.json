@@ -16,7 +16,8 @@
     "sakaisuji": -15,
     "nagahori": -22,
     "imazatosuji": -24,
-    "newtram": 12
+    "newtram": 12,
+    "kita_kyuko": 8
   },
   "overrides": {
     "midosuji": {
@@ -44,6 +45,14 @@
     },
     "nagahori": {
       "大阪ビジネスパーク": -32
+    },
+    "kita_kyuko": {
+      "江坂": 10,
+      "緑地公園": 8,
+      "桃山台": 8,
+      "千里中央": -10,
+      "箕面船場阪大前": -18,
+      "箕面萱野": 12
     }
   }
 }

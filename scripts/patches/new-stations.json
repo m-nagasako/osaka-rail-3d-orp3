@@ -3,6 +3,12 @@
   "inserts": [
     { "lineId": "chuo", "position": "before", "anchorName": "コスモスクエア",
       "name": "夢洲", "lat": 34.6517082, "lng": 135.3895961, "elevM": -12,
-      "note": "2025-01-19開業(C09)。座標はGoogleプレイス検索(2026-07-07)、地下2階構造・コスモスクエアから3.2kmはWikipediaで裏取り。深さは地下駅である事実に基づく概算" }
+      "note": "2025-01-19開業(C09)。座標はGoogleプレイス検索(2026-07-07)、地下2階構造・コスモスクエアから3.2kmはWikipediaで裏取り。深さは地下駅である事実に基づく概算" },
+    { "lineId": "kita_kyuko", "position": "before", "anchorName": "千里中央",
+      "name": "箕面船場阪大前", "lat": 34.82111, "lng": 135.49028, "elevM": -18,
+      "note": "2024-03-23開業(M07)。駅構成は北大阪急行公式、座標はWikipedia/GeoHack(2026-07-09取得)、地下駅構造に基づき深さは概算" },
+    { "lineId": "kita_kyuko", "position": "before", "anchorName": "箕面船場阪大前",
+      "name": "箕面萱野", "lat": 34.83167, "lng": 135.48917, "elevM": 12,
+      "note": "2024-03-23開業(M06)。駅構成は北大阪急行公式、座標はWikipedia/GeoHack(2026-07-09取得)、高架駅構造に基づき高さは概算" }
   ]
 }

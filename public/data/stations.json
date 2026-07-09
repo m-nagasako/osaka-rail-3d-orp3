@@ -5,7 +5,8 @@
   "lat": 34.758755,
   "lng": 135.497106,
   "lines": [
-   "midosuji"
+   "midosuji",
+   "kita_kyuko"
   ],
   "ridership": {
    "value": 88522,
@@ -1549,6 +1550,81 @@
    "value": 4400,
    "year": "2025年11月11日調査",
    "source": "Osaka Metro 路線別駅別乗降人員"
+  }
+ },
+ {
+  "id": "s9961401",
+  "name": "千里中央",
+  "lat": 34.808655,
+  "lng": 135.495067,
+  "lines": [
+   "kita_kyuko"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "北大阪急行駅別乗降人員は未投入",
+   "note": "北大阪急行の駅別乗降人員データはSprint2時点で未投入"
+  }
+ },
+ {
+  "id": "s9961402",
+  "name": "桃山台",
+  "lat": 34.793842,
+  "lng": 135.497142,
+  "lines": [
+   "kita_kyuko"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "北大阪急行駅別乗降人員は未投入",
+   "note": "北大阪急行の駅別乗降人員データはSprint2時点で未投入"
+  }
+ },
+ {
+  "id": "s9961403",
+  "name": "緑地公園",
+  "lat": 34.774772,
+  "lng": 135.495278,
+  "lines": [
+   "kita_kyuko"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "北大阪急行駅別乗降人員は未投入",
+   "note": "北大阪急行の駅別乗降人員データはSprint2時点で未投入"
+  }
+ },
+ {
+  "id": "spatch-箕面船場阪大前",
+  "name": "箕面船場阪大前",
+  "lat": 34.82111,
+  "lng": 135.49028,
+  "lines": [
+   "kita_kyuko"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "北大阪急行駅別乗降人員は未投入",
+   "note": "北大阪急行の駅別乗降人員データはSprint2時点で未投入"
+  }
+ },
+ {
+  "id": "spatch-箕面萱野",
+  "name": "箕面萱野",
+  "lat": 34.83167,
+  "lng": 135.48917,
+  "lines": [
+   "kita_kyuko"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "北大阪急行駅別乗降人員は未投入",
+   "note": "北大阪急行の駅別乗降人員データはSprint2時点で未投入"
   }
  }
 ]

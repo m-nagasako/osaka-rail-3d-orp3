@@ -17,10 +17,10 @@ const km = (a, b) => {
 };
 
 describe('生成データの整合(L2回帰)', () => {
-  it('規模: 9路線・ユニーク109駅・延べ134駅', () => {
-    expect(lines.length).toBe(9);
-    expect(stations.length).toBe(109);
-    expect(lines.reduce((a, l) => a + l.stations.length, 0)).toBe(134);
+  it('規模: 10路線・ユニーク114駅・延べ140駅', () => {
+    expect(lines.length).toBe(10);
+    expect(stations.length).toBe(114);
+    expect(lines.reduce((a, l) => a + l.stations.length, 0)).toBe(140);
   });
   it('路線↔駅の相互参照が閉じている', () => {
     for (const ln of lines) for (const sid of ln.stations) {
@@ -75,5 +75,24 @@ describe('生成データの整合(L2回帰)', () => {
   it('距離サニティ: 梅田〜なんば直線3.5〜5.0km', () => {
     const d = km(stations.find((s) => s.name === '梅田'), stations.find((s) => s.name === 'なんば'));
     expect(d).toBeGreaterThan(3.5); expect(d).toBeLessThan(5.0);
+  });
+  it('北大阪急行: 南北線が事業者別に入り、江坂は御堂筋線と共有される', () => {
+    const line = lines.find((l) => l.id === 'kita_kyuko');
+    expect(line).toBeDefined();
+    expect(line.operator).toBe('北大阪急行');
+    expect(line.name).toBe('南北線');
+
+    const names = line.stations.map((sid) => byId.get(sid).name);
+    expect(names).toEqual(['箕面萱野', '箕面船場阪大前', '千里中央', '桃山台', '緑地公園', '江坂']);
+    for (const name of ['箕面萱野', '箕面船場阪大前', '千里中央', '桃山台', '緑地公園']) {
+      expect(byId.get(line.stations[names.indexOf(name)]).lat).toBeGreaterThan(byId.get(line.stations[names.indexOf('江坂')]).lat);
+    }
+    for (let i = 1; i < line.stations.length; i++) {
+      expect(byId.get(line.stations[i - 1]).lat).toBeGreaterThan(byId.get(line.stations[i]).lat);
+    }
+
+    const esaka = stations.filter((s) => s.name === '江坂');
+    expect(esaka).toHaveLength(1);
+    expect(esaka[0].lines).toEqual(expect.arrayContaining(['midosuji', 'kita_kyuko']));
   });
 });

@@ -14,17 +14,17 @@ const OUT = path.join(DIR, '..', 'public', 'data');
 
 // ---- 路線定義(このプロジェクトのID ↔ 元データのID) ----
 const LINE_DEFS = [
-  { id: 'midosuji',    ekidataId: 99618, name: '御堂筋線',   expectedBase: 20 },
-  { id: 'tanimachi',   ekidataId: 99619, name: '谷町線',     expectedBase: 26 },
-  { id: 'yotsubashi',  ekidataId: 99620, name: '四つ橋線',   expectedBase: 11 },
-  { id: 'chuo',        ekidataId: 99621, name: '中央線',     expectedBase: 14 },
-  { id: 'sennichimae', ekidataId: 99622, name: '千日前線',   expectedBase: 14 },
-  { id: 'sakaisuji',   ekidataId: 99623, name: '堺筋線',     expectedBase: 10 },
-  { id: 'nagahori',    ekidataId: 99624, name: '長堀鶴見緑地線', expectedBase: 17 },
-  { id: 'imazatosuji', ekidataId: 99652, name: '今里筋線',   expectedBase: 11 },
-  { id: 'newtram',     ekidataId: 99625, name: '南港ポートタウン線', expectedBase: 10 },
+  { id: 'midosuji',    operator: 'Osaka Metro', ekidataId: 99618, name: '御堂筋線',   expectedBase: 20 },
+  { id: 'tanimachi',   operator: 'Osaka Metro', ekidataId: 99619, name: '谷町線',     expectedBase: 26 },
+  { id: 'yotsubashi',  operator: 'Osaka Metro', ekidataId: 99620, name: '四つ橋線',   expectedBase: 11 },
+  { id: 'chuo',        operator: 'Osaka Metro', ekidataId: 99621, name: '中央線',     expectedBase: 14 },
+  { id: 'sennichimae', operator: 'Osaka Metro', ekidataId: 99622, name: '千日前線',   expectedBase: 14 },
+  { id: 'sakaisuji',   operator: 'Osaka Metro', ekidataId: 99623, name: '堺筋線',     expectedBase: 10 },
+  { id: 'nagahori',    operator: 'Osaka Metro', ekidataId: 99624, name: '長堀鶴見緑地線', expectedBase: 17 },
+  { id: 'imazatosuji', operator: 'Osaka Metro', ekidataId: 99652, name: '今里筋線',   expectedBase: 11 },
+  { id: 'newtram',     operator: 'Osaka Metro', ekidataId: 99625, name: '南港ポートタウン線', expectedBase: 10 },
+  { id: 'kita_kyuko',  operator: '北大阪急行', ekidataId: 99614, name: '南北線', expectedBase: 4 },
 ];
-const OPERATOR = 'Osaka Metro';
 
 // ---- パッチ読込 ----
 const loadJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
@@ -98,7 +98,7 @@ for (const def of LINE_DEFS) {
   if (!meta) { errors.push(`line-meta.jsonに定義が無い: ${def.id}`); continue; }
 
   lines.push({
-    id: def.id, operator: OPERATOR, name: def.name,
+    id: def.id, operator: def.operator, name: def.name,
     color: meta.color, stations: ids, elev,
     avgSpeedKmh: meta.avgSpeedKmh, dwellSec: meta.dwellSec,
     service: meta.service, headways: meta.headways,
@@ -118,6 +118,16 @@ for (const [name, into] of Object.entries(rider.aggregatedInto)) {
   const node = nameIndex.get(norm(name));
   if (!node) { errors.push(`乗降人員(集計先): 駅名が一致しない「${name}」`); continue; }
   node.ridership = { value: null, year: rider.year, source: rider.source, note: `${into}駅で集計` };
+}
+for (const [name, note] of Object.entries(rider.stationNotes || {})) {
+  const node = nameIndex.get(norm(name));
+  if (!node) { errors.push(`乗降人員(注記): 駅名が一致しない「${name}」`); continue; }
+  node.ridership = {
+    value: null,
+    year: note.year || rider.year,
+    source: note.source || rider.source,
+    note: note.note,
+  };
 }
 
 // ---- 検証 ----
@@ -197,8 +207,10 @@ const meta = {
   sources: [
     { name: 'japan-train-data v0.6.0 (npm)', license: 'MIT', note: '駅座標・路線構成(2017年時点)。公開時はN02系統への差し替え推奨' },
     { name: 'Osaka Metro 路線別駅別乗降人員(2025年11月11日交通調査)', license: '公表資料', note: '乗降人員' },
+    { name: '北大阪急行電鉄 路線図・各駅情報', license: '公式サイト', note: '南北線の駅構成・時刻表(2026-07-09取得)' },
     { name: 'colordic.org メトロカラー', license: '参照(色名は複数ソースで照合)', note: 'ラインカラー' },
     { name: 'Googleプレイス検索/Wikipedia', license: '参照', note: '夢洲駅の座標・開業情報(2026-07-07取得)' },
+    { name: 'Wikipedia/GeoHack', license: 'CC BY-SA等', note: '箕面萱野・箕面船場阪大前の概略座標(2026-07-09取得)' },
   ],
   generatedAt: new Date().toISOString(),
   notes: [
