@@ -6,6 +6,9 @@
 | 作業者 | Codex |
 | 対象 | ORP3 `osaka-rail-3d` |
 | ブランチ | `main` |
+| GitHub | https://github.com/m-nagasako/osaka-rail-3d-orp3 |
+| Netlify本番 | https://osaka-rail-3d-orp3.netlify.app/ |
+| Netlify Deploy ID | `6a51241081a681009cee3185` |
 | 実施環境 | Windows NT 10.0.26200.0 / Node v24.13.0 / npm 11.6.2 |
 
 ## 1. 結論
@@ -13,6 +16,8 @@
 Sprint3指示1(M2-JR)と指示2(M2-F2垂直フィルタ)を完了しました。
 
 `npm run build-data`、`npm test`、`npm run build`はいずれも成功しています。ブラウザ部分確認では、JR西日本レイヤ、構造フィルタ3分類、地下のみ/全OFF/復帰、コンソールエラーなしを確認しました。
+
+2026-07-11にGitHub `main`へpushし、Netlify本番へDeploy ID `6a51241081a681009cee3185`で反映済みです。
 
 ## 2. 実装結果
 
@@ -46,6 +51,8 @@ Sprint3指示1(M2-JR)と指示2(M2-F2垂直フィルタ)を完了しました。
 | `npm test` | 成功。4ファイル、26/26パス |
 | `npm run build` | 成功。500KB超チャンク警告のみ |
 | ブラウザ部分確認 | 成功。JR西日本見出し、構造フィルタ(地下/地上/高架)、地下のみ/全OFF/復帰、コンソールエラーなし |
+| Netlify本番確認 | 成功。HTTP 200、19路線、158駅、JR西日本9路線を確認 |
+| GitHub main確認 | 成功。`main`が`5628f02 Document Sprint3 M2 delivery`を指すことを確認 |
 
 ## 5. コミット
 
