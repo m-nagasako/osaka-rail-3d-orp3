@@ -1,4 +1,6 @@
 // ミニイベントバス(Nuxtのreactiveの手作り最小版)。UI → state → world の単方向
+import { STRUCTURES } from '../sim/structure.js';
+
 const listeners = new Map();
 export const state = {
   data: null,               // { stations, lines, meta }
@@ -8,6 +10,7 @@ export const state = {
   running: true,
   showRidership: false,
   showDecorations: true,
+  visibleStructures: new Set(STRUCTURES),
 };
 export function on(event, fn) {
   if (!listeners.has(event)) listeners.set(event, []);

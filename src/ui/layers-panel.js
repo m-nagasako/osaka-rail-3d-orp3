@@ -1,4 +1,5 @@
 import { state, emit } from '../core/state.js';
+import { STRUCTURES } from '../sim/structure.js';
 
 // レイヤパネル: 事業者 > 路線 のON/OFF・ソロ・全表示切替・乗降人員バーのスイッチ
 export function createLayersPanel(data) {
@@ -8,6 +9,8 @@ export function createLayersPanel(data) {
     <h2>路線レイヤ</h2>
     <div class="tools"><button class="all">全表示</button><button class="none">全非表示</button></div>
     <div class="list"></div>
+    <h2 class="filter-title">構造フィルタ</h2>
+    <div class="structure-list"></div>
     <div class="sw row"><input type="checkbox" id="sw-deco" checked><label for="sw-deco" class="nm">装飾(海岸線・淀川・ランドマーク)</label></div>
     <div class="sw row"><input type="checkbox" id="sw-rider"><label for="sw-rider" class="nm">乗降人員バー(√スケール)</label></div>`;
   document.body.appendChild(el);
@@ -62,6 +65,17 @@ export function createLayersPanel(data) {
   el.querySelector('.none').onclick = () => {
     soloed = null; state.visibleLines.clear(); sync(); change();
   };
+  const structureList = el.querySelector('.structure-list');
+  for (const name of STRUCTURES) {
+    const row = document.createElement('div');
+    row.className = 'row structure-row';
+    row.innerHTML = `<input type="checkbox" checked id="st-${name}"><label for="st-${name}" class="nm">${name}</label>`;
+    structureList.appendChild(row);
+    row.querySelector('input').onchange = (e) => {
+      e.target.checked ? state.visibleStructures.add(name) : state.visibleStructures.delete(name);
+      change();
+    };
+  }
   el.querySelector('#sw-rider').onchange = (e) => { state.showRidership = e.target.checked; change(); };
   el.querySelector('#sw-deco').onchange = (e) => { state.showDecorations = e.target.checked; change(); };
 

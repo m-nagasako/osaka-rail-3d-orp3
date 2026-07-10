@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { buildReverseDistances, buildSchedule, positionAt } from '../sim/schedule.js';
 import { state } from '../core/state.js';
 import { CONFIG } from '../config.js';
+import { classifyStructure, hasVisibleStructure } from '../sim/structure.js';
 
 // 曲線上の各駅の弧長(起点からの距離m)。
 // 駅iは曲線パラメータ t=i/(n-1) 上にあるが、tは距離と比例しないため getLengths で実距離に変換する
@@ -12,6 +13,14 @@ function stationArcDistances(curve, nStations) {
   curve.updateArcLengths();
   const lengths = curve.getLengths(div); // 長さdiv+1、k番目 = t=k/div 地点の弧長
   return Array.from({ length: nStations }, (_, i) => lengths[i * perSeg]);
+}
+
+function segmentVisible(dists, structures, dist) {
+  if (dist <= dists[0]) return state.visibleStructures.has(structures[0]);
+  for (let i = 1; i < dists.length; i++) {
+    if (dist <= dists[i]) return hasVisibleStructure([structures[i - 1], structures[i]], state.visibleStructures);
+  }
+  return state.visibleStructures.has(structures[structures.length - 1]);
 }
 
 export function createTrains(scene, data, lineObjects) {
@@ -27,6 +36,8 @@ export function createTrains(scene, data, lineObjects) {
     per.push({
       line,
       curve,
+      dists,
+      structures: line.elev.map((e) => classifyStructure(e)),
       sched,
       schedRev,
       len: dists[dists.length - 1],
@@ -60,6 +71,7 @@ export function createTrains(scene, data, lineObjects) {
           const pos = positionAt(sched.profile, e);
           if (!pos || idx >= capacity) continue;
           const dist = dir === 1 ? pos.dist : p.len - pos.dist; // 逆方向は距離を反転
+          if (!segmentVisible(p.dists, p.structures, dist)) continue;
           const u = Math.min(Math.max(dist / p.len, 0), 1);
           p.curve.getPointAt(u, pt);            // 距離ベースで曲線上の座標を取得
           pt.y += CONFIG.TRAIN_Y_OFFSET;        // チューブより少し上に置き、列車として判別しやすくする

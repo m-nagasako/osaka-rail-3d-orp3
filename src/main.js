@@ -1,6 +1,7 @@
 import { createScene } from './core/scene.js';
 import { createProjection } from './core/projection.js';
 import { state, on } from './core/state.js';
+import { STRUCTURES } from './sim/structure.js';
 import { createGround } from './world/ground.js';
 import { createLines } from './world/lines.js';
 import { createStations } from './world/stations.js';
@@ -47,6 +48,7 @@ async function boot() {
     const data = { stations, lines, meta, landmarks };
     state.data = data;
     state.visibleLines = new Set(lines.map((l) => l.id));
+    state.visibleStructures = new Set(STRUCTURES);
     state.showRidership = false;
     state.showDecorations = true;
 
@@ -88,7 +90,7 @@ async function boot() {
 
     // レイヤ変更 → 路線チューブ・駅・人員バーへ一括反映(列車はtrainsが毎フレーム参照)
     on('layers', () => {
-      for (const [id, o] of lineObjects) o.mesh.visible = state.visibleLines.has(id);
+      for (const o of lineObjects.values()) o.apply();
       stationsObj.apply();
       labels.update(camera, controls);
       bars.apply();

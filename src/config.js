@@ -9,4 +9,5 @@ export const CONFIG = {
   DEPTH_GUIDE_RADIUS: 9,  // 地表から駅までの深さガイド柱
   TRAIN_Y_OFFSET: 58,     // 列車を路線チューブより少し浮かせて視認性を上げる
   MARGIN: 1500,           // 地面の外周余白
+  STRUCTURE_EPS: 2,       // -2〜+2mは地上扱いに丸める
 };

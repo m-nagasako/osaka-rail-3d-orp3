@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { CONFIG } from '../config.js';
 import { state } from '../core/state.js';
+import { classifyStructure } from '../sim/structure.js';
 
 // 駅: InstancedMesh(球)1つ。高さは所属路線のelev平均。
 // レイヤ規則: 「所属する全路線がOFFのときだけ」非表示(設計5.3、乗換駅対策)
@@ -27,17 +28,24 @@ export function createStations(scene, data, proj) {
   const items = data.stations.map((st) => {
     const { x, z } = proj.toXZ(st.lat, st.lng);
     let sum = 0, n = 0;
+    const memberships = [];
     for (const lid of st.lines) {
       const ln = linesById.get(lid);
       const idx = ln.stations.indexOf(st.id);
-      if (idx >= 0) { sum += ln.elev[idx]; n++; }
+      if (idx >= 0) {
+        sum += ln.elev[idx];
+        n++;
+        memberships.push({ lineId: lid, structure: classifyStructure(ln.elev[idx]) });
+      }
     }
-    return { st, x, z, y: (n ? sum / n : 0) * CONFIG.EXAGGERATION };
+    return { st, x, z, y: (n ? sum / n : 0) * CONFIG.EXAGGERATION, memberships };
   });
 
   function apply() {
     items.forEach((it, i) => {
-      const on = it.st.lines.some((l) => state.visibleLines.has(l));
+      const on = it.memberships.some((mbr) =>
+        state.visibleLines.has(mbr.lineId) && state.visibleStructures.has(mbr.structure)
+      );
       p.set(it.x, it.y, it.z);
       s.setScalar(on ? 1 : 0.0001);
       m.compose(p, q, s);

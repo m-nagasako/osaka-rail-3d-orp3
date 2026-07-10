@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { CONFIG } from '../config.js';
 import { state } from '../core/state.js';
+import { classifyStructure } from '../sim/structure.js';
 
 const DESKTOP_ALWAYS = 20;
 const DESKTOP_ALL_DISTANCE = 6500;
@@ -32,10 +33,15 @@ export function createStationLabels(scene, data, proj) {
   const labels = data.stations.map((st) => {
     const { x, z } = proj.toXZ(st.lat, st.lng);
     let sum = 0, n = 0;
+    const memberships = [];
     for (const lid of st.lines) {
       const ln = linesById.get(lid);
       const idx = ln ? ln.stations.indexOf(st.id) : -1;
-      if (idx >= 0) { sum += ln.elev[idx]; n++; }
+      if (idx >= 0) {
+        sum += ln.elev[idx];
+        n++;
+        memberships.push({ lineId: lid, structure: classifyStructure(ln.elev[idx]) });
+      }
     }
     const el = document.createElement('div');
     el.className = topStations.has(st.id) ? 'st-label st-label-top' : 'st-label';
@@ -44,7 +50,7 @@ export function createStationLabels(scene, data, proj) {
     const label = new CSS2DObject(el);
     label.position.set(x, (n ? sum / n : 0) * CONFIG.EXAGGERATION + 90, z);
     group.add(label);
-    return { st, el, label };
+    return { st, el, label, memberships };
   });
 
   function update(camera, controls) {
@@ -54,7 +60,9 @@ export function createStationLabels(scene, data, proj) {
     const showAll = camera.position.distanceTo(controls.target) < allDistance;
 
     for (const item of labels) {
-      const lineVisible = item.st.lines.some((lid) => state.visibleLines.has(lid));
+      const lineVisible = item.memberships.some((mbr) =>
+        state.visibleLines.has(mbr.lineId) && state.visibleStructures.has(mbr.structure)
+      );
       const visible = lineVisible && (showAll || always.has(item.st.id));
       item.label.visible = visible;
       item.el.style.display = visible ? '' : 'none';
