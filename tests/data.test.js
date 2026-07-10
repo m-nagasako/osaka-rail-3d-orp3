@@ -115,6 +115,7 @@ describe('生成データの整合(L2回帰)', () => {
       expect(line.operator).toBe('JR西日本');
       expect(line.stations.map((sid) => byId.get(sid).name)).toEqual(names);
     }
+    expect(lines.find((l) => l.id === 'jr_osaka_loop').closed).toBe(true);
 
     expect(stations.filter((s) => s.name === '大阪')).toHaveLength(1);
     expect(stations.find((s) => s.name === '大阪').lines).toEqual(expect.arrayContaining(['jr_osaka_loop', 'jr_kyoto', 'jr_kobe']));

@@ -788,7 +788,8 @@
     "to": "24:30",
     "min": 10
    }
-  ]
+  ],
+  "closed": true
  },
  {
   "id": "jr_yumesaki",

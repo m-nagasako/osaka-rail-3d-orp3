@@ -24,7 +24,7 @@ const LINE_DEFS = [
   { id: 'imazatosuji', operator: 'Osaka Metro', ekidataId: 99652, name: '今里筋線',   expectedBase: 11 },
   { id: 'newtram',     operator: 'Osaka Metro', ekidataId: 99625, name: '南港ポートタウン線', expectedBase: 10 },
   { id: 'kita_kyuko',  operator: '北大阪急行', ekidataId: 99614, name: '南北線', expectedBase: 4 },
-  { id: 'jr_osaka_loop', operator: 'JR西日本', ekidataId: 11623, name: '大阪環状線', expectedBase: 19 },
+  { id: 'jr_osaka_loop', operator: 'JR西日本', ekidataId: 11623, name: '大阪環状線', expectedBase: 19, closed: true },
   { id: 'jr_yumesaki', operator: 'JR西日本', ekidataId: 11624, name: 'JRゆめ咲線', expectedBase: 4 },
   { id: 'jr_tozai', operator: 'JR西日本', ekidataId: 11625, name: 'JR東西線', expectedBase: 9 },
   { id: 'jr_osaka_higashi', operator: 'JR西日本', ekidataId: 11641, name: 'おおさか東線', expectedBase: 7 },
@@ -121,13 +121,15 @@ for (const def of LINE_DEFS) {
   const meta = lineMeta[def.id];
   if (!meta) { errors.push(`line-meta.jsonに定義が無い: ${def.id}`); continue; }
 
-  lines.push({
+  const line = {
     id: def.id, operator: def.operator, name: def.name,
     color: meta.color, stations: ids, elev,
     avgSpeedKmh: meta.avgSpeedKmh, dwellSec: meta.dwellSec,
     service: meta.service, headways: meta.headways,
     _expected: def.expectedBase, // 検証用(出力前に削除)
-  });
+  };
+  if (def.closed === true) line.closed = true;
+  lines.push(line);
 }
 
 // ---- 乗降人員の投入(駅名で照合、ヶ/ケの表記ゆれを吸収) ----

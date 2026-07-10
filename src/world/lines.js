@@ -16,17 +16,20 @@ export function createLines(scene, data, proj) {
       const { x, z } = proj.toXZ(st.lat, st.lng);
       return new THREE.Vector3(x, line.elev[i] * CONFIG.EXAGGERATION, z);
     });
-    const curve = new THREE.CatmullRomCurve3(points, false, 'centripetal', 0.5);
-    curve.arcLengthDivisions = Math.max(1, (points.length - 1) * 40);
+    const closed = line.closed === true;
+    const curve = new THREE.CatmullRomCurve3(points, closed, 'centripetal', 0.5);
+    curve.arcLengthDivisions = Math.max(1, (closed ? points.length : points.length - 1) * 40);
     curve.updateArcLengths();
     const lineGroup = new THREE.Group();
     lineGroup.userData.lineId = line.id;
     const segments = [];
-    for (let i = 1; i < points.length; i++) {
-      const segCurve = new THREE.CatmullRomCurve3([points[i - 1], points[i]], false, 'centripetal', 0.5);
+    const segmentCount = closed ? points.length : points.length - 1;
+    for (let i = 0; i < segmentCount; i++) {
+      const j = (i + 1) % points.length;
+      const segCurve = new THREE.CatmullRomCurve3([points[i], points[j]], false, 'centripetal', 0.5);
       const geo = new THREE.TubeGeometry(segCurve, 12, CONFIG.TUBE_RADIUS, 6, false);
       const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: line.color }));
-      const classes = [classifyStructure(line.elev[i - 1]), classifyStructure(line.elev[i])];
+      const classes = [classifyStructure(line.elev[i]), classifyStructure(line.elev[j])];
       lineGroup.add(mesh);
       segments.push({ mesh, classes });
     }

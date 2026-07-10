@@ -6,28 +6,32 @@ import { classifyStructure, hasVisibleStructure } from '../sim/structure.js';
 
 // 曲線上の各駅の弧長(起点からの距離m)。
 // 駅iは曲線パラメータ t=i/(n-1) 上にあるが、tは距離と比例しないため getLengths で実距離に変換する
-function stationArcDistances(curve, nStations) {
+function stationArcDistances(curve, nStations, closed = false) {
   const perSeg = 40;
-  const div = (nStations - 1) * perSeg;
+  const div = (closed ? nStations : nStations - 1) * perSeg;
   curve.arcLengthDivisions = Math.max(1, div);
   curve.updateArcLengths();
   const lengths = curve.getLengths(div); // 長さdiv+1、k番目 = t=k/div 地点の弧長
-  return Array.from({ length: nStations }, (_, i) => lengths[i * perSeg]);
+  const count = closed ? nStations + 1 : nStations;
+  return Array.from({ length: count }, (_, i) => lengths[i * perSeg]);
 }
 
-function segmentVisible(dists, structures, dist) {
+function segmentVisible(dists, structures, dist, closed = false) {
   if (dist <= dists[0]) return state.visibleStructures.has(structures[0]);
   for (let i = 1; i < dists.length; i++) {
-    if (dist <= dists[i]) return hasVisibleStructure([structures[i - 1], structures[i]], state.visibleStructures);
+    const a = (i - 1) % structures.length;
+    const b = i % structures.length;
+    if (dist <= dists[i]) return hasVisibleStructure([structures[a], structures[b]], state.visibleStructures);
   }
-  return state.visibleStructures.has(structures[structures.length - 1]);
+  return state.visibleStructures.has(structures[closed ? 0 : structures.length - 1]);
 }
 
 export function createTrains(scene, data, lineObjects) {
   const per = [];
   let capacity = 0;
   for (const { line, curve } of lineObjects.values()) {
-    const dists = stationArcDistances(curve, line.stations.length);
+    const closed = line.closed === true;
+    const dists = stationArcDistances(curve, line.stations.length, closed);
     const sched = buildSchedule(dists, line);
     const schedRev = buildSchedule(buildReverseDistances(dists), line);
     const minH = Math.min(...line.headways.map((h) => h.min)) * 60;
@@ -38,6 +42,7 @@ export function createTrains(scene, data, lineObjects) {
       curve,
       dists,
       structures: line.elev.map((e) => classifyStructure(e)),
+      closed,
       sched,
       schedRev,
       len: dists[dists.length - 1],
@@ -71,7 +76,7 @@ export function createTrains(scene, data, lineObjects) {
           const pos = positionAt(sched.profile, e);
           if (!pos || idx >= capacity) continue;
           const dist = dir === 1 ? pos.dist : p.len - pos.dist; // 逆方向は距離を反転
-          if (!segmentVisible(p.dists, p.structures, dist)) continue;
+          if (!segmentVisible(p.dists, p.structures, dist, p.closed)) continue;
           const u = Math.min(Math.max(dist / p.len, 0), 1);
           p.curve.getPointAt(u, pt);            // 距離ベースで曲線上の座標を取得
           pt.y += CONFIG.TRAIN_Y_OFFSET;        // チューブより少し上に置き、列車として判別しやすくする
