@@ -18,10 +18,10 @@ const km = (a, b) => {
 };
 
 describe('生成データの整合(L2回帰)', () => {
-  it('規模: 19路線・ユニーク158駅・延べ206駅', () => {
-    expect(lines.length).toBe(19);
-    expect(stations.length).toBe(158);
-    expect(lines.reduce((a, l) => a + l.stations.length, 0)).toBe(206);
+  it('規模: 32路線・ユニーク218駅・延べ293駅', () => {
+    expect(lines.length).toBe(32);
+    expect(stations.length).toBe(218);
+    expect(lines.reduce((a, l) => a + l.stations.length, 0)).toBe(293);
   });
   it('路線↔駅の相互参照が閉じている', () => {
     for (const ln of lines) for (const sid of ln.stations) {
@@ -119,11 +119,12 @@ describe('生成データの整合(L2回帰)', () => {
 
     expect(stations.filter((s) => s.name === '大阪')).toHaveLength(1);
     expect(stations.find((s) => s.name === '大阪').lines).toEqual(expect.arrayContaining(['jr_osaka_loop', 'jr_kyoto', 'jr_kobe']));
-    expect(stations.find((s) => s.name === '梅田').lines).toEqual(['midosuji']);
+    expect(stations.find((s) => s.name === '梅田').lines).toEqual(expect.arrayContaining(['midosuji', 'hankyu_kobe', 'hankyu_takarazuka', 'hankyu_kyoto', 'hanshin_main']));
+    expect(stations.find((s) => s.name === '大阪').id).not.toBe(stations.find((s) => s.name === '梅田').id);
     expect(stations.find((s) => s.name === '天王寺').lines).toEqual(expect.arrayContaining(['midosuji', 'tanimachi', 'jr_osaka_loop', 'yamatoji', 'hanwa']));
     expect(stations.filter((s) => s.name === '平野')).toHaveLength(2);
   });
-  it('M2-JR追加後も既存10路線の駅数は不変', () => {
+  it('M3-私鉄追加後も既存19路線の駅数は不変', () => {
     const expectedCounts = {
       midosuji: 20,
       tanimachi: 26,
@@ -135,9 +136,75 @@ describe('生成データの整合(L2回帰)', () => {
       imazatosuji: 11,
       newtram: 10,
       kita_kyuko: 6,
+      jr_osaka_loop: 19,
+      jr_yumesaki: 4,
+      jr_tozai: 9,
+      jr_osaka_higashi: 7,
+      jr_kyoto: 4,
+      jr_kobe: 3,
+      yamatoji: 8,
+      hanwa: 8,
+      gakkentoshi: 4,
     };
     for (const [id, count] of Object.entries(expectedCounts)) {
       expect(lines.find((l) => l.id === id).stations.length, id).toBe(count);
+    }
+  });
+  it('M3-私鉄: 5事業者13路線を大阪市内+境界駅範囲で収録する', () => {
+    const expected = {
+      hankyu_kobe: { operator: '阪急', names: ['梅田', '中津', '十三', '神崎川', '園田'] },
+      hankyu_takarazuka: { operator: '阪急', names: ['梅田', '中津', '十三', '三国', '庄内'] },
+      hankyu_kyoto: { operator: '阪急', names: ['正雀', '相川', '上新庄', '淡路', '崇禅寺', '南方', '十三', '梅田'] },
+      hankyu_senri: { operator: '阪急', names: ['吹田', '下新庄', '淡路', '柴島', '天神橋筋六丁目'] },
+      hanshin_main: { operator: '阪神', names: ['梅田', '福島', '野田', '淀川', '姫島', '千船', '杭瀬'] },
+      hanshin_namba: { operator: '阪神', names: ['大阪難波', '桜川', 'ドーム前', '九条', '西九条', '千鳥橋', '伝法', '福', '出来島', '大物'] },
+      keihan_main: { operator: '京阪', names: ['滝井', '千林', '森小路', '関目', '野江', '京橋', '天満橋', '北浜', '淀屋橋'] },
+      keihan_nakanoshima: { operator: '京阪', names: ['天満橋', 'なにわ橋', '大江橋', '渡辺橋', '中之島'] },
+      kintetsu_namba: { operator: '近鉄', names: ['大阪難波', '近鉄日本橋', '大阪上本町'] },
+      kintetsu_osaka: { operator: '近鉄', names: ['大阪上本町', '鶴橋', '今里', '布施'] },
+      kintetsu_minamiosaka: { operator: '近鉄', names: ['大阪阿部野橋', '河堀口', '北田辺', '今川', '針中野', '矢田', '河内天美'] },
+      nankai_main: { operator: '南海', names: ['難波', '新今宮', '天下茶屋', '岸里玉出', '粉浜', '住吉大社', '住ノ江', '七道'] },
+      nankai_koya: { operator: '南海', names: ['難波', '今宮戎', '新今宮', '萩ノ茶屋', '天下茶屋', '岸里玉出', '帝塚山', '住吉東', '沢ノ町', '我孫子前', '浅香山'] },
+    };
+    for (const [id, exp] of Object.entries(expected)) {
+      const line = lines.find((l) => l.id === id);
+      expect(line, id).toBeDefined();
+      expect(line.operator).toBe(exp.operator);
+      expect(line.stations.map((sid) => byId.get(sid).name)).toEqual(exp.names);
+    }
+    expect(lines.find((l) => l.id === 'kintetsu_nara')).toBeUndefined();
+    expect(new Set(Object.values(expected).map((x) => x.operator))).toEqual(new Set(['阪急', '阪神', '京阪', '近鉄', '南海']));
+  });
+  it('M3-私鉄: 主要乗換駅は共有し、別名駅は分離する', () => {
+    const only = (name) => {
+      const matches = stations.filter((s) => s.name === name);
+      expect(matches, name).toHaveLength(1);
+      return matches[0];
+    };
+
+    expect(only('淡路').lines).toEqual(expect.arrayContaining(['hankyu_kyoto', 'hankyu_senri']));
+    expect(only('天満橋').lines).toEqual(expect.arrayContaining(['tanimachi', 'keihan_main', 'keihan_nakanoshima']));
+    expect(only('大阪難波').lines).toEqual(expect.arrayContaining(['hanshin_namba', 'kintetsu_namba']));
+    expect(only('大阪上本町').lines).toEqual(expect.arrayContaining(['kintetsu_namba', 'kintetsu_osaka']));
+    expect(only('鶴橋').lines).toEqual(expect.arrayContaining(['sennichimae', 'jr_osaka_loop', 'kintetsu_osaka']));
+    expect(only('京橋').lines).toEqual(expect.arrayContaining(['nagahori', 'jr_osaka_loop', 'jr_tozai', 'gakkentoshi', 'keihan_main']));
+    expect(only('西九条').lines).toEqual(expect.arrayContaining(['jr_osaka_loop', 'jr_yumesaki', 'hanshin_namba']));
+    expect(only('新今宮').lines).toEqual(expect.arrayContaining(['jr_osaka_loop', 'yamatoji', 'nankai_main', 'nankai_koya']));
+    expect(only('天下茶屋').lines).toEqual(expect.arrayContaining(['sakaisuji', 'nankai_main', 'nankai_koya']));
+    expect(only('岸里玉出').lines).toEqual(expect.arrayContaining(['nankai_main', 'nankai_koya']));
+
+    expect(only('大阪').lines).not.toContain('midosuji');
+    expect(only('梅田').lines).not.toContain('jr_osaka_loop');
+    expect(only('難波').lines).toEqual(expect.arrayContaining(['nankai_main', 'nankai_koya']));
+    expect(only('なんば').lines).toEqual(expect.arrayContaining(['midosuji', 'yotsubashi', 'sennichimae']));
+    expect(only('ＪＲ難波').lines).toEqual(['yamatoji']);
+    expect(only('大阪阿部野橋').lines).toEqual(['kintetsu_minamiosaka']);
+    expect(only('天王寺').lines).not.toContain('kintetsu_minamiosaka');
+  });
+  it('M3-私鉄: 地下区間を持つ私鉄路線が構造フィルタ対象になる', () => {
+    for (const id of ['hanshin_namba', 'keihan_nakanoshima', 'kintetsu_namba']) {
+      const line = lines.find((l) => l.id === id);
+      expect(line.elev.some((z) => z < -2), id).toBe(true);
     }
   });
   it('ランドマーク: 指定6件が装飾データとして生成される', () => {

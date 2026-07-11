@@ -26,7 +26,20 @@
     "jr_kobe": 8,
     "yamatoji": 0,
     "hanwa": 0,
-    "gakkentoshi": 0
+    "gakkentoshi": 0,
+    "hankyu_kobe": 8,
+    "hankyu_takarazuka": 8,
+    "hankyu_kyoto": 8,
+    "hankyu_senri": 6,
+    "hanshin_main": -10,
+    "hanshin_namba": -14,
+    "keihan_main": 6,
+    "keihan_nakanoshima": -16,
+    "kintetsu_namba": -16,
+    "kintetsu_osaka": 8,
+    "kintetsu_minamiosaka": 6,
+    "nankai_main": 10,
+    "nankai_koya": 10
   },
   "overrides": {
     "midosuji": {
@@ -91,6 +104,31 @@
     },
     "gakkentoshi": {
       "京橋": -2
+    },
+    "hanshin_main": {
+      "淀川": 0,
+      "姫島": 6,
+      "千船": 6,
+      "杭瀬": 6
+    },
+    "hanshin_namba": {
+      "千鳥橋": 0,
+      "伝法": 6,
+      "福": 6,
+      "出来島": 6,
+      "大物": 6
+    },
+    "keihan_main": {
+      "淀屋橋": -14,
+      "北浜": -14,
+      "天満橋": -16,
+      "京橋": 0
+    },
+    "kintetsu_osaka": {
+      "大阪上本町": -12
+    },
+    "hankyu_senri": {
+      "天神橋筋六丁目": -14
     }
   }
 }

@@ -479,10 +479,180 @@
       { "from": "20:00", "to": "24:30", "min": 15 }
     ]
   },
+  "hankyu_kobe": {
+    "color": "#007ac3",
+    "avgSpeedKmh": 48,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 4 },
+      { "from": "09:30", "to": "16:30", "min": 6 },
+      { "from": "16:30", "to": "20:00", "min": 5 },
+      { "from": "20:00", "to": "24:30", "min": 10 }
+    ]
+  },
+  "hankyu_takarazuka": {
+    "color": "#f5a200",
+    "avgSpeedKmh": 46,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 4 },
+      { "from": "09:30", "to": "16:30", "min": 6 },
+      { "from": "16:30", "to": "20:00", "min": 5 },
+      { "from": "20:00", "to": "24:30", "min": 10 }
+    ]
+  },
+  "hankyu_kyoto": {
+    "color": "#2db45a",
+    "avgSpeedKmh": 50,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 4 },
+      { "from": "09:30", "to": "16:30", "min": 6 },
+      { "from": "16:30", "to": "20:00", "min": 5 },
+      { "from": "20:00", "to": "24:30", "min": 10 }
+    ]
+  },
+  "hankyu_senri": {
+    "color": "#2db45a",
+    "avgSpeedKmh": 42,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 5 },
+      { "from": "09:30", "to": "16:30", "min": 8 },
+      { "from": "16:30", "to": "20:00", "min": 6 },
+      { "from": "20:00", "to": "24:30", "min": 10 }
+    ]
+  },
+  "hanshin_main": {
+    "color": "#003b8f",
+    "avgSpeedKmh": 42,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 12 },
+      { "from": "07:00", "to": "09:30", "min": 5 },
+      { "from": "09:30", "to": "16:30", "min": 7.5 },
+      { "from": "16:30", "to": "20:00", "min": 6 },
+      { "from": "20:00", "to": "24:30", "min": 12 }
+    ]
+  },
+  "hanshin_namba": {
+    "color": "#e95420",
+    "avgSpeedKmh": 40,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 12 },
+      { "from": "07:00", "to": "09:30", "min": 6 },
+      { "from": "09:30", "to": "16:30", "min": 10 },
+      { "from": "16:30", "to": "20:00", "min": 8 },
+      { "from": "20:00", "to": "24:30", "min": 12 }
+    ]
+  },
+  "keihan_main": {
+    "color": "#00965e",
+    "avgSpeedKmh": 45,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 5 },
+      { "from": "09:30", "to": "16:30", "min": 7.5 },
+      { "from": "16:30", "to": "20:00", "min": 6 },
+      { "from": "20:00", "to": "24:30", "min": 12 }
+    ]
+  },
+  "keihan_nakanoshima": {
+    "color": "#00a3e0",
+    "avgSpeedKmh": 35,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 15 },
+      { "from": "07:00", "to": "09:30", "min": 10 },
+      { "from": "09:30", "to": "16:30", "min": 15 },
+      { "from": "16:30", "to": "20:00", "min": 10 },
+      { "from": "20:00", "to": "24:30", "min": 15 }
+    ]
+  },
+  "kintetsu_namba": {
+    "color": "#d70c18",
+    "avgSpeedKmh": 35,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 8 },
+      { "from": "07:00", "to": "09:30", "min": 4 },
+      { "from": "09:30", "to": "16:30", "min": 6 },
+      { "from": "16:30", "to": "20:00", "min": 5 },
+      { "from": "20:00", "to": "24:30", "min": 10 }
+    ]
+  },
+  "kintetsu_osaka": {
+    "color": "#d70c18",
+    "avgSpeedKmh": 46,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 8 },
+      { "from": "07:00", "to": "09:30", "min": 4 },
+      { "from": "09:30", "to": "16:30", "min": 6 },
+      { "from": "16:30", "to": "20:00", "min": 5 },
+      { "from": "20:00", "to": "24:30", "min": 10 }
+    ]
+  },
+  "kintetsu_minamiosaka": {
+    "color": "#009b77",
+    "avgSpeedKmh": 46,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 5 },
+      { "from": "09:30", "to": "16:30", "min": 7.5 },
+      { "from": "16:30", "to": "20:00", "min": 6 },
+      { "from": "20:00", "to": "24:30", "min": 12 }
+    ]
+  },
+  "nankai_main": {
+    "color": "#0065b3",
+    "avgSpeedKmh": 50,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 5 },
+      { "from": "09:30", "to": "16:30", "min": 7.5 },
+      { "from": "16:30", "to": "20:00", "min": 6 },
+      { "from": "20:00", "to": "24:30", "min": 12 }
+    ]
+  },
+  "nankai_koya": {
+    "color": "#009a44",
+    "avgSpeedKmh": 45,
+    "dwellSec": 25,
+    "service": { "start": "05:00", "end": "24:30" },
+    "headways": [
+      { "from": "05:00", "to": "07:00", "min": 10 },
+      { "from": "07:00", "to": "09:30", "min": 5 },
+      { "from": "09:30", "to": "16:30", "min": 7.5 },
+      { "from": "16:30", "to": "20:00", "min": 6 },
+      { "from": "20:00", "to": "24:30", "min": 12 }
+    ]
+  },
   "_headwaySources": {
     "midosuji": "ピーク2分15秒=2024-03-23改正の報道。他時間帯は概算",
     "chuo": "最小3分20秒=公式リリース(2025-10-14改正・現行)、日中毎時8本=報道。夢洲〜コスモスクエアの約半数折返しは未対応(全線直通として近似)",
     "kita_kyuko": "公式駅別時刻表(2026-07-09取得)を目視し、時間帯別の概算ヘッドウェイへ丸めた。直通運転は未実装で江坂折返しとして近似",
-    "jr": "JR西日本公式の駅情報/時刻表を参照し、M2では時間帯別の概算ヘッドウェイへ丸めた。JRも直通運転は未実装で路線内折返しとして近似"
+    "jr": "JR西日本公式の駅情報/時刻表を参照し、M2では時間帯別の概算ヘッドウェイへ丸めた。JRも直通運転は未実装で路線内折返しとして近似",
+    "private": "阪急・阪神・京阪・近鉄・南海の公式路線/駅情報を参照し、Sprint4では時間帯別の概算ヘッドウェイへ丸めた。相互直通・優等種別・区間運転は未実装で各路線内折返しとして近似"
   }
 }

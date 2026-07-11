@@ -77,7 +77,11 @@
   "lat": 34.703765,
   "lng": 135.497496,
   "lines": [
-   "midosuji"
+   "midosuji",
+   "hankyu_kobe",
+   "hankyu_takarazuka",
+   "hankyu_kyoto",
+   "hanshin_main"
   ],
   "ridership": {
    "value": 434981,
@@ -91,7 +95,8 @@
   "lat": 34.692289,
   "lng": 135.500972,
   "lines": [
-   "midosuji"
+   "midosuji",
+   "keihan_main"
   ],
   "ridership": {
    "value": 215475,
@@ -399,7 +404,8 @@
   "lng": 135.511283,
   "lines": [
    "tanimachi",
-   "sakaisuji"
+   "sakaisuji",
+   "hankyu_senri"
   ],
   "ridership": {
    "value": 38626,
@@ -456,7 +462,9 @@
   "lat": 34.689457,
   "lng": 135.517371,
   "lines": [
-   "tanimachi"
+   "tanimachi",
+   "keihan_main",
+   "keihan_nakanoshima"
   ],
   "ridership": {
    "value": 86060,
@@ -827,7 +835,8 @@
   "lat": 34.675492,
   "lng": 135.473749,
   "lines": [
-   "chuo"
+   "chuo",
+   "hanshin_namba"
   ],
   "ridership": {
    "value": 28469,
@@ -1001,7 +1010,8 @@
   "lat": 34.668427,
   "lng": 135.488839,
   "lines": [
-   "sennichimae"
+   "sennichimae",
+   "hanshin_namba"
   ],
   "ridership": {
    "value": 19678,
@@ -1031,7 +1041,8 @@
   "lng": 135.529393,
   "lines": [
    "sennichimae",
-   "jr_osaka_loop"
+   "jr_osaka_loop",
+   "kintetsu_osaka"
   ],
   "ridership": {
    "value": 204945,
@@ -1130,7 +1141,8 @@
   "lat": 34.691588,
   "lng": 135.506634,
   "lines": [
-   "sakaisuji"
+   "sakaisuji",
+   "keihan_main"
   ],
   "ridership": {
    "value": 67616,
@@ -1173,7 +1185,9 @@
   "lat": 34.636847,
   "lng": 135.496673,
   "lines": [
-   "sakaisuji"
+   "sakaisuji",
+   "nankai_main",
+   "nankai_koya"
   ],
   "ridership": {
    "value": 72394,
@@ -1276,7 +1290,8 @@
    "nagahori",
    "jr_osaka_loop",
    "jr_tozai",
-   "gakkentoshi"
+   "gakkentoshi",
+   "keihan_main"
   ],
   "ridership": {
    "value": 268293,
@@ -1648,7 +1663,9 @@
   "lng": 135.501076,
   "lines": [
    "jr_osaka_loop",
-   "yamatoji"
+   "yamatoji",
+   "nankai_main",
+   "nankai_koya"
   ],
   "ridership": {
    "value": 126228,
@@ -1694,7 +1711,8 @@
   "lng": 135.466779,
   "lines": [
    "jr_osaka_loop",
-   "jr_yumesaki"
+   "jr_yumesaki",
+   "hanshin_namba"
   ],
   "ridership": {
    "value": 66830,
@@ -1723,7 +1741,8 @@
   "lat": 34.697167,
   "lng": 135.486563,
   "lines": [
-   "jr_osaka_loop"
+   "jr_osaka_loop",
+   "hanshin_main"
   ],
   "ridership": {
    "value": 56884,
@@ -2296,6 +2315,914 @@
    "year": "2024年度",
    "source": "JR西日本 データで見るJR西日本2025",
    "note": "JR西日本公表の上位50駅表に未掲載のため個別値未投入"
+  }
+ },
+ {
+  "id": "s3400102",
+  "name": "中津",
+  "lat": 34.709745,
+  "lng": 135.493011,
+  "lines": [
+   "hankyu_kobe",
+   "hankyu_takarazuka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400103",
+  "name": "十三",
+  "lat": 34.720226,
+  "lng": 135.48248,
+  "lines": [
+   "hankyu_kobe",
+   "hankyu_takarazuka",
+   "hankyu_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400104",
+  "name": "神崎川",
+  "lat": 34.732249,
+  "lng": 135.472967,
+  "lines": [
+   "hankyu_kobe"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400105",
+  "name": "園田",
+  "lat": 34.751905,
+  "lng": 135.448186,
+  "lines": [
+   "hankyu_kobe"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400204",
+  "name": "三国",
+  "lat": 34.737254,
+  "lng": 135.483128,
+  "lines": [
+   "hankyu_takarazuka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400205",
+  "name": "庄内",
+  "lat": 34.750333,
+  "lng": 135.475095,
+  "lines": [
+   "hankyu_takarazuka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400319",
+  "name": "正雀",
+  "lat": 34.775454,
+  "lng": 135.545657,
+  "lines": [
+   "hankyu_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400320",
+  "name": "相川",
+  "lat": 34.757942,
+  "lng": 135.533853,
+  "lines": [
+   "hankyu_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400321",
+  "name": "上新庄",
+  "lat": 34.750873,
+  "lng": 135.533114,
+  "lines": [
+   "hankyu_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400322",
+  "name": "淡路",
+  "lat": 34.738827,
+  "lng": 135.516527,
+  "lines": [
+   "hankyu_kyoto",
+   "hankyu_senri"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400323",
+  "name": "崇禅寺",
+  "lat": 34.731048,
+  "lng": 135.510186,
+  "lines": [
+   "hankyu_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400324b",
+  "name": "南方",
+  "lat": 34.725656,
+  "lng": 135.499507,
+  "lines": [
+   "hankyu_kyoto"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400807",
+  "name": "吹田",
+  "lat": 34.759675,
+  "lng": 135.517366,
+  "lines": [
+   "hankyu_senri"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400808",
+  "name": "下新庄",
+  "lat": 34.746474,
+  "lng": 135.519893,
+  "lines": [
+   "hankyu_senri"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3400810",
+  "name": "柴島",
+  "lat": 34.728437,
+  "lng": 135.511478,
+  "lines": [
+   "hankyu_senri"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪急電鉄 駅別乗降人員は未投入",
+   "note": "阪急の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s1162506c",
+  "name": "野田",
+  "lat": 34.694432,
+  "lng": 135.47606,
+  "lines": [
+   "hanshin_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500104",
+  "name": "淀川",
+  "lat": 34.696159,
+  "lng": 135.465249,
+  "lines": [
+   "hanshin_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500105",
+  "name": "姫島",
+  "lat": 34.704466,
+  "lng": 135.45823,
+  "lines": [
+   "hanshin_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500106",
+  "name": "千船",
+  "lat": 34.712245,
+  "lng": 135.445361,
+  "lines": [
+   "hanshin_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500107",
+  "name": "杭瀬",
+  "lat": 34.718272,
+  "lng": 135.43884,
+  "lines": [
+   "hanshin_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100101b",
+  "name": "大阪難波",
+  "lat": 34.667113,
+  "lng": 135.499144,
+  "lines": [
+   "hanshin_namba",
+   "kintetsu_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500209b",
+  "name": "ドーム前",
+  "lat": 34.670266,
+  "lng": 135.478313,
+  "lines": [
+   "hanshin_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500202",
+  "name": "千鳥橋",
+  "lat": 34.68546,
+  "lng": 135.457817,
+  "lines": [
+   "hanshin_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500203",
+  "name": "伝法",
+  "lat": 34.689256,
+  "lng": 135.451559,
+  "lines": [
+   "hanshin_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500204",
+  "name": "福",
+  "lat": 34.699791,
+  "lng": 135.442692,
+  "lines": [
+   "hanshin_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500205",
+  "name": "出来島",
+  "lat": 34.707173,
+  "lng": 135.436921,
+  "lines": [
+   "hanshin_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3500108",
+  "name": "大物",
+  "lat": 34.716583,
+  "lng": 135.425549,
+  "lines": [
+   "hanshin_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "阪神電車 駅別乗降人員は未投入",
+   "note": "阪神の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300132",
+  "name": "滝井",
+  "lat": 34.727868,
+  "lng": 135.557463,
+  "lines": [
+   "keihan_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300133",
+  "name": "千林",
+  "lat": 34.723966,
+  "lng": 135.554741,
+  "lines": [
+   "keihan_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300134",
+  "name": "森小路",
+  "lat": 34.719419,
+  "lng": 135.551686,
+  "lines": [
+   "keihan_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300135b",
+  "name": "関目",
+  "lat": 34.71252,
+  "lng": 135.546953,
+  "lines": [
+   "keihan_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300136",
+  "name": "野江",
+  "lat": 34.707223,
+  "lng": 135.543356,
+  "lines": [
+   "keihan_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300139b",
+  "name": "なにわ橋",
+  "lat": 34.692829,
+  "lng": 135.506594,
+  "lines": [
+   "keihan_nakanoshima"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300140b",
+  "name": "大江橋",
+  "lat": 34.694296,
+  "lng": 135.500412,
+  "lines": [
+   "keihan_nakanoshima"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300804b",
+  "name": "渡辺橋",
+  "lat": 34.693916,
+  "lng": 135.49542,
+  "lines": [
+   "keihan_nakanoshima"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3300805",
+  "name": "中之島",
+  "lat": 34.691504,
+  "lng": 135.487373,
+  "lines": [
+   "keihan_nakanoshima"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "京阪電車 駅別乗降人員は未投入",
+   "note": "京阪の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100102b",
+  "name": "近鉄日本橋",
+  "lat": 34.666949,
+  "lng": 135.505818,
+  "lines": [
+   "kintetsu_namba"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100103",
+  "name": "大阪上本町",
+  "lat": 34.665513,
+  "lng": 135.522189,
+  "lines": [
+   "kintetsu_namba",
+   "kintetsu_osaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100105",
+  "name": "今里",
+  "lat": 34.664788,
+  "lng": 135.549917,
+  "lines": [
+   "kintetsu_osaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100106",
+  "name": "布施",
+  "lat": 34.664092,
+  "lng": 135.563516,
+  "lines": [
+   "kintetsu_osaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s1160719b",
+  "name": "大阪阿部野橋",
+  "lat": 34.645643,
+  "lng": 135.514529,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100302",
+  "name": "河堀口",
+  "lat": 34.641166,
+  "lng": 135.524237,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100303",
+  "name": "北田辺",
+  "lat": 34.632184,
+  "lng": 135.528934,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100304",
+  "name": "今川",
+  "lat": 34.626226,
+  "lng": 135.531148,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100305",
+  "name": "針中野",
+  "lat": 34.616969,
+  "lng": 135.533078,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100306",
+  "name": "矢田",
+  "lat": 34.605926,
+  "lng": 135.532942,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3100307",
+  "name": "河内天美",
+  "lat": 34.585823,
+  "lng": 135.535509,
+  "lines": [
+   "kintetsu_minamiosaka"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "近鉄 駅別乗降人員は未投入",
+   "note": "近鉄の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200101",
+  "name": "難波",
+  "lat": 34.66357,
+  "lng": 135.501949,
+  "lines": [
+   "nankai_main",
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200104",
+  "name": "岸里玉出",
+  "lat": 34.628291,
+  "lng": 135.494388,
+  "lines": [
+   "nankai_main",
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200105",
+  "name": "粉浜",
+  "lat": 34.61833,
+  "lng": 135.491763,
+  "lines": [
+   "nankai_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200106",
+  "name": "住吉大社",
+  "lat": 34.612431,
+  "lng": 135.490124,
+  "lines": [
+   "nankai_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200107",
+  "name": "住ノ江",
+  "lat": 34.605348,
+  "lng": 135.487011,
+  "lines": [
+   "nankai_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200108",
+  "name": "七道",
+  "lat": 34.592313,
+  "lng": 135.480556,
+  "lines": [
+   "nankai_main"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200702",
+  "name": "今宮戎",
+  "lat": 34.655137,
+  "lng": 135.50153,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200704",
+  "name": "萩ノ茶屋",
+  "lat": 34.64561,
+  "lng": 135.498986,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200707",
+  "name": "帝塚山",
+  "lat": 34.622332,
+  "lng": 135.498406,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200708",
+  "name": "住吉東",
+  "lat": 34.6133,
+  "lng": 135.497587,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200709",
+  "name": "沢ノ町",
+  "lat": 34.606284,
+  "lng": 135.496957,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200710",
+  "name": "我孫子前",
+  "lat": 34.600188,
+  "lng": 135.496888,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
+  }
+ },
+ {
+  "id": "s3200711",
+  "name": "浅香山",
+  "lat": 34.589319,
+  "lng": 135.491025,
+  "lines": [
+   "nankai_koya"
+  ],
+  "ridership": {
+   "value": null,
+   "year": "未投入",
+   "source": "南海電鉄 駅別乗降人員は未投入",
+   "note": "南海の駅別乗降人員データはSprint4時点で未投入"
   }
  }
 ]
