@@ -1,7 +1,7 @@
 import { state } from '../core/state.js';
 import { fmt } from '../sim/clock.js';
 
-const MIN = 5 * 3600, MAX = 25 * 3600;
+const MIN = 0, MAX = 25 * 3600;
 const SPEEDS = [1, 10, 60, 300];
 
 // 画面下部の時刻バー: 再生/停止・スライダー・倍速プリセット
@@ -21,8 +21,15 @@ export function createTimeBar() {
   const clock = el.querySelector('.clock');
   const trainstat = el.querySelector('.trainstat');
   let dragging = false;
+  const syncControls = () => {
+    play.textContent = state.running ? '⏸' : '▶';
+    if (!dragging) slider.value = state.simTime;
+    el.querySelectorAll('[data-s]').forEach((x) =>
+      x.classList.toggle('on', Number(x.dataset.s) === state.speed)
+    );
+  };
 
-  play.onclick = () => { state.running = !state.running; play.textContent = state.running ? '⏸' : '▶'; };
+  play.onclick = () => { state.running = !state.running; syncControls(); };
   slider.addEventListener('pointerdown', () => (dragging = true));
   slider.addEventListener('pointerup', () => (dragging = false));
   // ステートレス設計の見せ場: スライダーを動かすと全列車が即その時刻の位置に現れる
@@ -30,10 +37,10 @@ export function createTimeBar() {
   for (const b of el.querySelectorAll('[data-s]')) {
     b.onclick = () => {
       state.speed = Number(b.dataset.s);
-      el.querySelectorAll('[data-s]').forEach((x) => x.classList.toggle('on', x === b));
+      syncControls();
     };
   }
-  el.querySelector('[data-s="60"]').classList.add('on');
+  syncControls();
 
   // 毎フレームmainから呼ぶ(ドラッグ中はスライダーを奪わない)
   return {

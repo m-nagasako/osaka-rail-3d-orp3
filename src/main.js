@@ -1,6 +1,7 @@
 import { createScene } from './core/scene.js';
 import { createProjection } from './core/projection.js';
 import { state, on } from './core/state.js';
+import { decodeState } from './core/url-state.js';
 import { STRUCTURES } from './sim/structure.js';
 import { createGround } from './world/ground.js';
 import { createLines } from './world/lines.js';
@@ -47,10 +48,14 @@ async function boot() {
     ]);
     const data = { stations, lines, meta, landmarks };
     state.data = data;
-    state.visibleLines = new Set(lines.map((l) => l.id));
-    state.visibleStructures = new Set(STRUCTURES);
-    state.showRidership = false;
-    state.showDecorations = true;
+    const shared = decodeState(window.location.hash, lines.map((l) => l.id));
+    state.visibleLines = shared.visibleLines;
+    state.visibleStructures = shared.visibleStructures;
+    state.simTime = shared.simTime;
+    state.speed = shared.speed;
+    state.running = shared.running;
+    state.showRidership = shared.showRidership;
+    state.showDecorations = shared.showDecorations;
 
     const proj = createProjection(stations);
     const { renderer, labelRenderer, scene, camera, controls } = createScene(el);
