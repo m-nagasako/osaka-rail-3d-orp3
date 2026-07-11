@@ -5,7 +5,7 @@
 | 日付 | 2026-07-11 |
 | 担当 | Codex |
 | 対象 | ORP3 / M3私鉄データ |
-| 状態 | 実装・L1/L2検証完了。L3 #27はN実施待ち |
+| 状態 | 実装・L1/L2検証・GitHub push・Netlify本番反映完了。L3 #27はN実施待ち |
 
 ## 1. 実施内容
 
@@ -48,6 +48,7 @@ Sprint4指示書に基づき、私鉄5事業者のM3データを追加した。
 - `docs/quality-management.md`をv1.6へ更新し、L3 #27を追加
 - `docs/qa-log.md` No.38〜39を追加
 - `README.md`をM3状態へ更新
+- `docs/PUBLIC_DEPLOY.md`へSprint4本番Deploy IDを記録
 
 品質管理書のL3既存結果は追記運用ルールどおり保持した。#1〜24のOK実績、および#25〜26の未実施欄はリセットしていない。
 
@@ -57,7 +58,7 @@ Sprint4指示書に基づき、私鉄5事業者のM3データを追加した。
 - 私鉄の駅別乗降人員は未投入
 - 私鉄の深さ/高さ、運転間隔、ラインカラーは概算を含む
 - 相互直通、優等種別、区間運転は未対応で、各路線内折返しとして近似している
-- 公開時点の本番反映は未実施。必要に応じてGitHub pushおよびNetlify deployを行う
+- GitHub push済み。Netlify本番反映済み: Deploy ID `6a51a7fc46672bc2ecdd6a10` / 本番URL `https://osaka-rail-3d-orp3.netlify.app/`
 
 ## 6. 引継ぎ
 
