@@ -5,7 +5,7 @@
 | 日付 | 2026-07-11 |
 | 担当 | Codex |
 | 対象 | ORP3 / M3-b URL共有 |
-| 状態 | 実装・L1/L2検証・ブラウザ確認完了。L3 #28はN実施待ち |
+| 状態 | 実装・L1/L2検証・ブラウザ確認・GitHub push・Netlify本番反映完了。L3 #28はN実施待ち |
 
 ## 1. 実施内容
 
@@ -42,6 +42,7 @@ Sprint5指示書と内部設計v1.4に基づき、表示状態をURLハッシュ
 | `npm run build` | 成功。`dist/index.html`、`dist/assets/index-DMA-uX6Y.js`を生成 |
 | ストレージ禁止チェック | `localStorage` / `sessionStorage` / `indexedDB` の使用なし |
 | ブラウザ確認 | 事業者チェックボックス8件、阪急4路線の一括OFF/ON、共有URLで阪急OFF復元、壊れたhashの通常起動を確認 |
+| 本番反映確認 | Netlify Deploy ID `6a524042f335387dfa5b1989`。本番HTML/JSで`index-DMA-uX6Y.js`、共有ボタン、事業者チェック、URLハッシュ処理、32路線データを確認 |
 
 自動テスト追加範囲:
 
@@ -56,6 +57,7 @@ Sprint5指示書と内部設計v1.4に基づき、表示状態をURLハッシュ
 - `docs/qa-log.md` No.41〜42を追加
 - `docs/HANDOVER_2026-07-07.md`をSprint5状態へ更新
 - `README.md`をM3-b状態へ更新
+- `docs/PUBLIC_DEPLOY.md`へSprint5本番Deploy IDを記録
 
 品質管理書のL3既存結果は追記運用ルールどおり保持した。#1〜27の結果欄はリセットしていない。
 
@@ -65,6 +67,7 @@ Sprint5指示書と内部設計v1.4に基づき、表示状態をURLハッシュ
 - URL共有はカメラ視点と比較ピンを含まない
 - ライブ同期は未実装。共有ボタン押下時のみURLを生成する
 - 比較パネル強化、OGP動的生成、N02差し替え、直通運転はSprint5スコープ外
+- GitHub push済み。Netlify本番反映済み: Deploy ID `6a524042f335387dfa5b1989` / 本番URL `https://osaka-rail-3d-orp3.netlify.app/`
 
 ## 6. 引継ぎ
 
